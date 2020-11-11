@@ -1,0 +1,74 @@
+﻿@model kmcmvc.Areas.Admin.Data.propertytype
+
+@{
+    ViewBag.Title = "Add Property Type";
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="pcoded-inner-content">
+        <div class="main-body">
+            <div class="page-wrapper">
+                <!-- Page body start -->
+                <div class="page-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <!-- Basic Inputs Validation start -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5>Add MUCT Property Type </h5>
+                                    @*<span>Add town of <code>.form-control</code> with <code>&lt;input&gt;</code> tag</span>*@
+                                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="card-block">
+                                    <form id="main" method="post" action="/" novalidate>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">Property Type</label>
+                                            <div class="col-sm-10">
+                                                @Html.EditorFor(model => model.propertyTypeName, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.propertyTypeName, "", new { @class = "text-danger" })
+                                                <span class="messages"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">Property Code</label>
+                                            <div class="col-sm-10">
+                                                @Html.EditorFor(model => model.PropertyCode, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.PropertyCode, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">Size</label>
+                                            <div class="col-sm-10">
+                                                @Html.EditorFor(model => model.SizeIn, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.SizeIn, "", new { @class = "text-danger" })
+                                                <span class="messages"></span>
+                                            </div>
+                                        </div>
+                                       
+                                        <div class="form-group row">
+                                            <label class="col-sm-2"></label>
+                                            <div class="col-sm-10">
+                                                <button type="submit" class="btn btn-primary m-b-0">Submit</button>
+                                            </div>
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+                            <!-- Basic Inputs Validation end -->
+                            @Html.ActionLink("Back to List", "Index")
+                        </div>
+                    </div>
+                </div>
+                <!-- Page body end -->
+            </div>
+        </div>
+    </div>
+
+
+
+}

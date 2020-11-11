@@ -1,0 +1,74 @@
+﻿@model kmcmvc.Areas.Admin.Data.searchinsheetsuspended
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>searchinsheetsuspended</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.InwordNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InwordNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Consumer_No)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Consumer_No)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Department)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Department)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Zone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Zone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Twon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Twon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Createdon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Createdon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Createdby)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Createdby)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.SSID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

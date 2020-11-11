@@ -1,0 +1,79 @@
+﻿@model IEnumerable<kmcmvc.Areas.Admin.Data.partPayment>
+
+@{
+    ViewBag.Title = "Part Payment";
+}
+
+    <div class="pcoded-inner-content">
+        <!-- Main-body start -->
+        <div class="main-body">
+            <div class="page-wrapper">
+                <!-- Page-body start -->
+                <div class="page-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="card">
+                                <div class="card-header table-card-header">
+                                    <h5>MUCT KMC Part Payment List</h5>
+
+                                </div>
+                                <div class="card-block">
+                                    <span>To add new record @Html.ActionLink("Click on this link", "Create")</span>
+                                    <div class="dt-responsive table-responsive">
+                                        <table id="basic-btn" class="table table-striped table-bordered nowrap">
+                                            <thead>
+                                                <tr>
+                                                    <th>Consumer No #</th>
+                                                    <th>Part Payment Arrears</th>
+                                                    <th>Issued By</th>
+                                                    <th>Issued On</th>
+                                                    <th>Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tbody>
+                                                @foreach (var item in Model)
+                                                {
+
+                                                <tr>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.consumer_no)
+                                                    </td>
+                                                    <td>@Html.DisplayFor(modelItem => item.part_payemnt_arrears)</td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.createdby)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.createdon)
+                                                    </td>
+                                                    <td>
+                                                        @Html.ActionLink("Edit", "Edit", new { id = item.sno }) |
+                                                        @Html.ActionLink("Details", "Details", new { id = item.sno }) |
+                                                        @Html.ActionLink("Delete", "Delete", new { id = item.sno })
+                                                    </td>
+                                                </tr>
+
+
+
+                                                }
+                                            </tbody>
+                                            <tfoot>
+                                                <tr>
+                                                    <th>Consumer No #</th>
+                                                    <th>Part Payment Arrears</th>
+                                                    <th>Issued By</th>
+                                                    <th>Issued On</th>
+                                                    <th>Actions</th>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

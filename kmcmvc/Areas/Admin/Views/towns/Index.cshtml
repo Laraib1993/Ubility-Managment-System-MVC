@@ -1,0 +1,110 @@
+﻿@model IEnumerable<kmcmvc.Areas.Admin.Data.town>
+
+@{
+    ViewBag.Title = "Town";
+
+    @*<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <link href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css" rel="stylesheet" type="text/css" />*@
+
+
+    @*<script type="text/javascript">
+        $(function () {
+            $.ajax({
+                type: "POST",
+                url: "/towns/AjaxMethod",
+                data: '{}',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: OnSuccess,
+                failure: function (response) {
+                    alert(response.d);
+                },
+                error: function (response) {
+                    alert(response.d);
+                }
+            });
+        });
+        function OnSuccess(response) {
+            $("#basic-btn").DataTable(
+                {
+                    bLengthChange: true,
+                    lengthMenu: [[5, 10, -1], [5, 10, "All"]],
+                    bFilter: true,
+                    bSort: true,
+                    bPaginate: true,
+                    data: response,
+                    columns: [{ 'data': 'TwonName' },
+                    { 'data': 'ZoneId' }]
+                });
+        };
+    </script>*@
+
+}
+
+
+
+<!-- Page-header end -->
+<div class="pcoded-inner-content">
+    <!-- Main-body start -->
+    <div class="main-body">
+        <div class="page-wrapper">
+            <!-- Page-body start -->
+            <div class="page-body">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="card">
+                            <div class="card-header table-card-header">
+                                <h5>MUCT KMC Town List</h5>
+
+                            </div>
+                            <div class="card-block">
+                                <span>To add new town @Html.ActionLink("Click on this link", "Create")</span>
+                                <div class="dt-responsive table-responsive">
+                                    <table id="basic-btn" class="table table-striped table-bordered nowrap">
+                                        <thead>
+                                            <tr>
+                                                <th>Town</th>
+                                                <th>Zone</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tbody>
+                                            @foreach (var item in Model)
+                                            {
+
+                                                <tr>
+                                                    <td>@Html.DisplayFor(modelItem => item.TownName)</td>
+                                                    <td>@Html.DisplayFor(modelItem => item.ZoneId)</td>
+                                                    <td>
+                                                        @Html.ActionLink("Edit", "Edit", new { id = item.TownID }) |
+                                                        @Html.ActionLink("Details", "Details", new { id = item.TownID }) |
+                                                        @Html.ActionLink("Delete", "Delete", new { id = item.TownID })
+                                                    </td>
+                                                </tr>
+
+
+
+                                            }
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <th>Town</th>
+                                                <th>Zone</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

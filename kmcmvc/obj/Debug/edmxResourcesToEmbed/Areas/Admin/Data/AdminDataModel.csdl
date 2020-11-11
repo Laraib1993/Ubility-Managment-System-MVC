@@ -1,0 +1,356 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AdminModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="consumer_rebate">
+    <Key>
+      <PropertyRef Name="sno" />
+    </Key>
+    <Property Name="sno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="modification_status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="consumer_no" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="consumer_name" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="category" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="area" Type="Int32" />
+    <Property Name="outstanding_Arrears" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="after_rebate" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="createdby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="createdon" Type="DateTime" Precision="0" />
+    <Property Name="status" Type="Byte" />
+  </EntityType>
+  <EntityType Name="Dapartment_Consumer">
+    <Key>
+      <PropertyRef Name="sno" />
+    </Key>
+    <Property Name="sno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="modification_status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="consumer_no" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="consumer_name" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="category" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="area" Type="Int32" />
+    <Property Name="outstanding_Arrears" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="after_rebate" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="createdby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="createdon" Type="DateTime" Precision="0" />
+    <Property Name="status" Type="Byte" />
+  </EntityType>
+  <EntityType Name="kmc_emp_rebate">
+    <Key>
+      <PropertyRef Name="sno" />
+    </Key>
+    <Property Name="sno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="inword" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="consumer_no" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="emp_id" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="consumer_name" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="consumer_fname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="consumer_cnic" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="consumer_mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="consumer_address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="category" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="area" Type="Int32" />
+    <Property Name="outstanding_Arrears" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="after_rebate" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="createdby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="createdon" Type="DateTime" Precision="0" />
+    <Property Name="status" Type="Byte" />
+  </EntityType>
+  <EntityType Name="modify_consumer">
+    <Key>
+      <PropertyRef Name="modify_consumerID" />
+    </Key>
+    <Property Name="modify_consumerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="inword_no" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="modification_status" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="consumer_no" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="previous_name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="previous_surname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="previous_cnic" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="previous_mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="previous_address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="new_name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="new_surname" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="new_cnic" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="new_mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="new_address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="createdby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="createdon" Type="DateTime" Precision="0" />
+    <Property Name="description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="approvedby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="Byte" />
+  </EntityType>
+  <EntityType Name="modify_impact">
+    <Key>
+      <PropertyRef Name="impactID" />
+    </Key>
+    <Property Name="impactID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="inword" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="modification_status" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="consumer_no" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="consumer_name" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="previous_arrears" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="after_correction" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="difference" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="difference_percentage" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="impact" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="createdon" Type="DateTime" Precision="0" />
+    <Property Name="createdby" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="Byte" />
+  </EntityType>
+  <EntityType Name="MUCTBill_Records">
+    <Key>
+      <PropertyRef Name="MUCTBillID" />
+    </Key>
+    <Property Name="MUCTBillID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ConsumerNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Zone" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Town" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Employee" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Createdon" Type="DateTime" Precision="3" />
+    <Property Name="createdby" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="muctemployee">
+    <Key>
+      <PropertyRef Name="muctempid" />
+    </Key>
+    <Property Name="muctempid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="employee" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="designation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="partPayment">
+    <Key>
+      <PropertyRef Name="sno" />
+    </Key>
+    <Property Name="sno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="consumer_no" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="consumer_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="consumer_name" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="consumer_address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="category" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="area" Type="Int32" />
+    <Property Name="issue_date" Type="DateTime" Precision="0" />
+    <Property Name="due_date" Type="DateTime" Precision="0" />
+    <Property Name="billing_month" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="part_payment_into" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="current_Charges" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="outstanding_Arrears" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="part_payemnt_arrears" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="createdby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="createdon" Type="DateTime" Precision="0" />
+    <Property Name="status" Type="Byte" />
+    <Property Name="barcode" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="propertytype">
+    <Key>
+      <PropertyRef Name="propertyTypeID" />
+    </Key>
+    <Property Name="propertyTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="propertyTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PropertyCode" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SizeIn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Rebate_cancle_history">
+    <Key>
+      <PropertyRef Name="RCID" />
+    </Key>
+    <Property Name="RCID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="inwordno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="consumer_no" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="consumer_name" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="pervious_outstanding" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="after_rebate_outstanding" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="difference" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="difference_percentage" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="cancledby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="cancledon" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="searchingsheet">
+    <Key>
+      <PropertyRef Name="SearchID" />
+    </Key>
+    <Property Name="SearchID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="inword" Type="Int32" />
+    <Property Name="consumer_no" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="zone" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Createdby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="createdon" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="searchinsheetsuspended">
+    <Key>
+      <PropertyRef Name="SSID" />
+    </Key>
+    <Property Name="SSID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InwordNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Consumer_No" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Department" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Zone" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Twon" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Createdon" Type="DateTime" Precision="3" />
+    <Property Name="Createdby" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="subcategoryproperty">
+    <Key>
+      <PropertyRef Name="SubCategoryID" />
+    </Key>
+    <Property Name="SubCategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SubCategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="subcategorycode" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="PropertyTypeID" Type="Int32" />
+    <Property Name="Status" Type="Byte" />
+  </EntityType>
+  <EntityType Name="userinfo">
+    <Key>
+      <PropertyRef Name="userinfoID" />
+    </Key>
+    <Property Name="userinfoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CNIC" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="RoleID" Type="Int32" />
+    <Property Name="AccountStatusID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="usertypes" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="zone">
+    <Key>
+      <PropertyRef Name="ZoneID" />
+    </Key>
+    <Property Name="ZoneID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ZoneName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Status" Type="Byte" Nullable="false" />
+  </EntityType>
+  <EntityType Name="invoice">
+    <Key>
+      <PropertyRef Name="sno" />
+    </Key>
+    <Property Name="sno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="consumer_no" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="consumer_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="consumer_name" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="consumer_address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="category" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="area" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="sqft_sqyd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Storey" Type="Int32" />
+    <Property Name="zone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="town" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="uc_no" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="uc_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="block" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="issue_date" Type="DateTime" Precision="0" />
+    <Property Name="due_date" Type="DateTime" Precision="0" />
+    <Property Name="billing_month" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="current_Charges" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="outstanding_Arrears" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="current_arrears" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="consumer_service_charges" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="within_duedate_amount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="consumer_surcharge" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="after_duedate_amount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="property_tag" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="kmc_category" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="createdby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="createdon" Type="DateTime" Precision="0" />
+    <Property Name="status" Type="Byte" />
+    <Property Name="consumer_checkdigit" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="billing_period_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="barcode" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="checkdigit_status" Type="Int32" />
+    <Property Name="part_payment_createdon" Type="DateTime" Precision="0" />
+    <Property Name="part_payment_createdby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="part_payment_arrears" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="part_payment_into" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="rebate_status" Type="Byte" />
+    <Property Name="short_description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Department_Arrears" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Arrears_15" Type="Decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="modify_invoice">
+    <Key>
+      <PropertyRef Name="sno" />
+    </Key>
+    <Property Name="sno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="inword" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="modification_status" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="consumer_no" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="previous_category" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="previous_area" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="previous_Storey" Type="Int32" />
+    <Property Name="previous_current_Charges" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="previous_outstanding_Arrears" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="new_category" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="new_area" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="new_storey" Type="Int32" />
+    <Property Name="new_current_Charge" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="new_outstanding_Arrears" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="zone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="town" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="billing_month" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="consumer_surcharge" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="createdby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="createdon" Type="DateTime" Precision="0" />
+    <Property Name="description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="Byte" />
+  </EntityType>
+  <EntityContainer Name="AdminEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="consumer_rebate" EntityType="Self.consumer_rebate" />
+    <EntitySet Name="Dapartment_Consumer" EntityType="Self.Dapartment_Consumer" />
+    <EntitySet Name="kmc_emp_rebate" EntityType="Self.kmc_emp_rebate" />
+    <EntitySet Name="modify_consumer" EntityType="Self.modify_consumer" />
+    <EntitySet Name="modify_impact" EntityType="Self.modify_impact" />
+    <EntitySet Name="MUCTBill_Records" EntityType="Self.MUCTBill_Records" />
+    <EntitySet Name="muctemployees" EntityType="Self.muctemployee" />
+    <EntitySet Name="partPayments" EntityType="Self.partPayment" />
+    <EntitySet Name="propertytypes" EntityType="Self.propertytype" />
+    <EntitySet Name="Rebate_cancle_history" EntityType="Self.Rebate_cancle_history" />
+    <EntitySet Name="searchingsheets" EntityType="Self.searchingsheet" />
+    <EntitySet Name="searchinsheetsuspendeds" EntityType="Self.searchinsheetsuspended" />
+    <EntitySet Name="subcategoryproperties" EntityType="Self.subcategoryproperty" />
+    <EntitySet Name="userinfoes" EntityType="Self.userinfo" />
+    <EntitySet Name="users" EntityType="Self.user" />
+    <EntitySet Name="zones" EntityType="Self.zone" />
+    <EntitySet Name="invoices" EntityType="Self.invoice" />
+    <EntitySet Name="modify_invoice" EntityType="Self.modify_invoice" />
+    <EntitySet Name="towns" EntityType="AdminModel.town" />
+    <EntitySet Name="accountstatus" EntityType="AdminModel.accountstatu" />
+    <EntitySet Name="roles" EntityType="AdminModel.role" />
+  </EntityContainer>
+  <EntityType Name="town">
+    <Key>
+      <PropertyRef Name="TownID" />
+    </Key>
+    <Property Name="TownID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TownName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AccountStatusID" Type="Byte" />
+    <Property Name="ZoneId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="accountstatu">
+    <Key>
+      <PropertyRef Name="AccountStatusID" />
+    </Key>
+    <Property Name="AccountStatusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AccountStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="role">
+    <Key>
+      <PropertyRef Name="RoleID" />
+    </Key>
+    <Property Name="RoleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

@@ -1,0 +1,356 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AdminModelStoreContainer" CdmEntityContainer="AdminEntities">
+    <EntitySetMapping Name="consumer_rebate">
+      <EntityTypeMapping TypeName="AdminModel.consumer_rebate">
+        <MappingFragment StoreEntitySet="consumer_rebate">
+          <ScalarProperty Name="sno" ColumnName="sno" />
+          <ScalarProperty Name="modification_status" ColumnName="modification_status" />
+          <ScalarProperty Name="consumer_no" ColumnName="consumer_no" />
+          <ScalarProperty Name="consumer_name" ColumnName="consumer_name" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="area" ColumnName="area" />
+          <ScalarProperty Name="outstanding_Arrears" ColumnName="outstanding_Arrears" />
+          <ScalarProperty Name="after_rebate" ColumnName="after_rebate" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="createdby" ColumnName="createdby" />
+          <ScalarProperty Name="createdon" ColumnName="createdon" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Dapartment_Consumer">
+      <EntityTypeMapping TypeName="AdminModel.Dapartment_Consumer">
+        <MappingFragment StoreEntitySet="Dapartment_Consumer">
+          <ScalarProperty Name="sno" ColumnName="sno" />
+          <ScalarProperty Name="modification_status" ColumnName="modification_status" />
+          <ScalarProperty Name="consumer_no" ColumnName="consumer_no" />
+          <ScalarProperty Name="consumer_name" ColumnName="consumer_name" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="area" ColumnName="area" />
+          <ScalarProperty Name="outstanding_Arrears" ColumnName="outstanding_Arrears" />
+          <ScalarProperty Name="after_rebate" ColumnName="after_rebate" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="createdby" ColumnName="createdby" />
+          <ScalarProperty Name="createdon" ColumnName="createdon" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="kmc_emp_rebate">
+      <EntityTypeMapping TypeName="AdminModel.kmc_emp_rebate">
+        <MappingFragment StoreEntitySet="kmc_emp_rebate">
+          <ScalarProperty Name="sno" ColumnName="sno" />
+          <ScalarProperty Name="inword" ColumnName="inword" />
+          <ScalarProperty Name="consumer_no" ColumnName="consumer_no" />
+          <ScalarProperty Name="emp_id" ColumnName="emp_id" />
+          <ScalarProperty Name="consumer_name" ColumnName="consumer_name" />
+          <ScalarProperty Name="consumer_fname" ColumnName="consumer_fname" />
+          <ScalarProperty Name="consumer_cnic" ColumnName="consumer_cnic" />
+          <ScalarProperty Name="consumer_mobile" ColumnName="consumer_mobile" />
+          <ScalarProperty Name="consumer_address" ColumnName="consumer_address" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="area" ColumnName="area" />
+          <ScalarProperty Name="outstanding_Arrears" ColumnName="outstanding_Arrears" />
+          <ScalarProperty Name="after_rebate" ColumnName="after_rebate" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="createdby" ColumnName="createdby" />
+          <ScalarProperty Name="createdon" ColumnName="createdon" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="modify_consumer">
+      <EntityTypeMapping TypeName="AdminModel.modify_consumer">
+        <MappingFragment StoreEntitySet="modify_consumer">
+          <ScalarProperty Name="modify_consumerID" ColumnName="modify_consumerID" />
+          <ScalarProperty Name="inword_no" ColumnName="inword_no" />
+          <ScalarProperty Name="modification_status" ColumnName="modification_status" />
+          <ScalarProperty Name="consumer_no" ColumnName="consumer_no" />
+          <ScalarProperty Name="previous_name" ColumnName="previous_name" />
+          <ScalarProperty Name="previous_surname" ColumnName="previous_surname" />
+          <ScalarProperty Name="previous_cnic" ColumnName="previous_cnic" />
+          <ScalarProperty Name="previous_mobile" ColumnName="previous_mobile" />
+          <ScalarProperty Name="previous_address" ColumnName="previous_address" />
+          <ScalarProperty Name="new_name" ColumnName="new_name" />
+          <ScalarProperty Name="new_surname" ColumnName="new_surname" />
+          <ScalarProperty Name="new_cnic" ColumnName="new_cnic" />
+          <ScalarProperty Name="new_mobile" ColumnName="new_mobile" />
+          <ScalarProperty Name="new_address" ColumnName="new_address" />
+          <ScalarProperty Name="createdby" ColumnName="createdby" />
+          <ScalarProperty Name="createdon" ColumnName="createdon" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="approvedby" ColumnName="approvedby" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="modify_impact">
+      <EntityTypeMapping TypeName="AdminModel.modify_impact">
+        <MappingFragment StoreEntitySet="modify_impact">
+          <ScalarProperty Name="impactID" ColumnName="impactID" />
+          <ScalarProperty Name="inword" ColumnName="inword" />
+          <ScalarProperty Name="modification_status" ColumnName="modification_status" />
+          <ScalarProperty Name="consumer_no" ColumnName="consumer_no" />
+          <ScalarProperty Name="consumer_name" ColumnName="consumer_name" />
+          <ScalarProperty Name="previous_arrears" ColumnName="previous_arrears" />
+          <ScalarProperty Name="after_correction" ColumnName="after_correction" />
+          <ScalarProperty Name="difference" ColumnName="difference" />
+          <ScalarProperty Name="difference_percentage" ColumnName="difference_percentage" />
+          <ScalarProperty Name="impact" ColumnName="impact" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="createdon" ColumnName="createdon" />
+          <ScalarProperty Name="createdby" ColumnName="createdby" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MUCTBill_Records">
+      <EntityTypeMapping TypeName="AdminModel.MUCTBill_Records">
+        <MappingFragment StoreEntitySet="MUCTBill_Records">
+          <ScalarProperty Name="MUCTBillID" ColumnName="MUCTBillID" />
+          <ScalarProperty Name="ConsumerNo" ColumnName="ConsumerNo" />
+          <ScalarProperty Name="Zone" ColumnName="Zone" />
+          <ScalarProperty Name="Town" ColumnName="Town" />
+          <ScalarProperty Name="Employee" ColumnName="Employee" />
+          <ScalarProperty Name="Createdon" ColumnName="Createdon" />
+          <ScalarProperty Name="createdby" ColumnName="createdby" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="muctemployees">
+      <EntityTypeMapping TypeName="AdminModel.muctemployee">
+        <MappingFragment StoreEntitySet="muctemployee">
+          <ScalarProperty Name="muctempid" ColumnName="muctempid" />
+          <ScalarProperty Name="employee" ColumnName="employee" />
+          <ScalarProperty Name="designation" ColumnName="designation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="partPayments">
+      <EntityTypeMapping TypeName="AdminModel.partPayment">
+        <MappingFragment StoreEntitySet="partPayment">
+          <ScalarProperty Name="sno" ColumnName="sno" />
+          <ScalarProperty Name="consumer_no" ColumnName="consumer_no" />
+          <ScalarProperty Name="consumer_code" ColumnName="consumer_code" />
+          <ScalarProperty Name="consumer_name" ColumnName="consumer_name" />
+          <ScalarProperty Name="consumer_address" ColumnName="consumer_address" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="area" ColumnName="area" />
+          <ScalarProperty Name="issue_date" ColumnName="issue_date" />
+          <ScalarProperty Name="due_date" ColumnName="due_date" />
+          <ScalarProperty Name="billing_month" ColumnName="billing_month" />
+          <ScalarProperty Name="part_payment_into" ColumnName="part_payment_into" />
+          <ScalarProperty Name="current_Charges" ColumnName="current_Charges" />
+          <ScalarProperty Name="outstanding_Arrears" ColumnName="outstanding_Arrears" />
+          <ScalarProperty Name="part_payemnt_arrears" ColumnName="part_payemnt_arrears" />
+          <ScalarProperty Name="createdby" ColumnName="createdby" />
+          <ScalarProperty Name="createdon" ColumnName="createdon" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="barcode" ColumnName="barcode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="propertytypes">
+      <EntityTypeMapping TypeName="AdminModel.propertytype">
+        <MappingFragment StoreEntitySet="propertytype">
+          <ScalarProperty Name="propertyTypeID" ColumnName="propertyTypeID" />
+          <ScalarProperty Name="propertyTypeName" ColumnName="propertyTypeName" />
+          <ScalarProperty Name="PropertyCode" ColumnName="PropertyCode" />
+          <ScalarProperty Name="SizeIn" ColumnName="SizeIn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rebate_cancle_history">
+      <EntityTypeMapping TypeName="AdminModel.Rebate_cancle_history">
+        <MappingFragment StoreEntitySet="Rebate_cancle_history">
+          <ScalarProperty Name="RCID" ColumnName="RCID" />
+          <ScalarProperty Name="inwordno" ColumnName="inwordno" />
+          <ScalarProperty Name="consumer_no" ColumnName="consumer_no" />
+          <ScalarProperty Name="consumer_name" ColumnName="consumer_name" />
+          <ScalarProperty Name="pervious_outstanding" ColumnName="pervious_outstanding" />
+          <ScalarProperty Name="after_rebate_outstanding" ColumnName="after_rebate_outstanding" />
+          <ScalarProperty Name="difference" ColumnName="difference" />
+          <ScalarProperty Name="difference_percentage" ColumnName="difference_percentage" />
+          <ScalarProperty Name="cancledby" ColumnName="cancledby" />
+          <ScalarProperty Name="cancledon" ColumnName="cancledon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="searchingsheets">
+      <EntityTypeMapping TypeName="AdminModel.searchingsheet">
+        <MappingFragment StoreEntitySet="searchingsheet">
+          <ScalarProperty Name="SearchID" ColumnName="SearchID" />
+          <ScalarProperty Name="inword" ColumnName="inword" />
+          <ScalarProperty Name="consumer_no" ColumnName="consumer_no" />
+          <ScalarProperty Name="zone" ColumnName="zone" />
+          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+          <ScalarProperty Name="createdon" ColumnName="createdon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="searchinsheetsuspendeds">
+      <EntityTypeMapping TypeName="AdminModel.searchinsheetsuspended">
+        <MappingFragment StoreEntitySet="searchinsheetsuspended">
+          <ScalarProperty Name="SSID" ColumnName="SSID" />
+          <ScalarProperty Name="InwordNo" ColumnName="InwordNo" />
+          <ScalarProperty Name="Consumer_No" ColumnName="Consumer_No" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="Zone" ColumnName="Zone" />
+          <ScalarProperty Name="Twon" ColumnName="Twon" />
+          <ScalarProperty Name="Createdon" ColumnName="Createdon" />
+          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="subcategoryproperties">
+      <EntityTypeMapping TypeName="AdminModel.subcategoryproperty">
+        <MappingFragment StoreEntitySet="subcategoryproperty">
+          <ScalarProperty Name="SubCategoryID" ColumnName="SubCategoryID" />
+          <ScalarProperty Name="SubCategoryName" ColumnName="SubCategoryName" />
+          <ScalarProperty Name="subcategorycode" ColumnName="subcategorycode" />
+          <ScalarProperty Name="PropertyTypeID" ColumnName="PropertyTypeID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="userinfoes">
+      <EntityTypeMapping TypeName="AdminModel.userinfo">
+        <MappingFragment StoreEntitySet="userinfo">
+          <ScalarProperty Name="userinfoID" ColumnName="userinfoID" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="CNIC" ColumnName="CNIC" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="AccountStatusID" ColumnName="AccountStatusID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="AdminModel.user">
+        <MappingFragment StoreEntitySet="users">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="usertypes" ColumnName="usertypes" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="zones">
+      <EntityTypeMapping TypeName="AdminModel.zone">
+        <MappingFragment StoreEntitySet="zone">
+          <ScalarProperty Name="ZoneID" ColumnName="ZoneID" />
+          <ScalarProperty Name="ZoneName" ColumnName="ZoneName" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="invoices">
+      <EntityTypeMapping TypeName="AdminModel.invoice">
+        <MappingFragment StoreEntitySet="invoice">
+          <ScalarProperty Name="sno" ColumnName="sno" />
+          <ScalarProperty Name="consumer_no" ColumnName="consumer_no" />
+          <ScalarProperty Name="consumer_code" ColumnName="consumer_code" />
+          <ScalarProperty Name="consumer_name" ColumnName="consumer_name" />
+          <ScalarProperty Name="consumer_address" ColumnName="consumer_address" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="area" ColumnName="area" />
+          <ScalarProperty Name="sqft_sqyd" ColumnName="sqft_sqyd" />
+          <ScalarProperty Name="Storey" ColumnName="Storey" />
+          <ScalarProperty Name="zone" ColumnName="zone" />
+          <ScalarProperty Name="town" ColumnName="town" />
+          <ScalarProperty Name="uc_no" ColumnName="uc_no" />
+          <ScalarProperty Name="uc_name" ColumnName="uc_name" />
+          <ScalarProperty Name="block" ColumnName="block" />
+          <ScalarProperty Name="issue_date" ColumnName="issue_date" />
+          <ScalarProperty Name="due_date" ColumnName="due_date" />
+          <ScalarProperty Name="billing_month" ColumnName="billing_month" />
+          <ScalarProperty Name="current_Charges" ColumnName="current_Charges" />
+          <ScalarProperty Name="outstanding_Arrears" ColumnName="outstanding_Arrears" />
+          <ScalarProperty Name="current_arrears" ColumnName="current_arrears" />
+          <ScalarProperty Name="consumer_service_charges" ColumnName="consumer_service_charges" />
+          <ScalarProperty Name="within_duedate_amount" ColumnName="within_duedate_amount" />
+          <ScalarProperty Name="consumer_surcharge" ColumnName="consumer_surcharge" />
+          <ScalarProperty Name="after_duedate_amount" ColumnName="after_duedate_amount" />
+          <ScalarProperty Name="property_tag" ColumnName="property_tag" />
+          <ScalarProperty Name="kmc_category" ColumnName="kmc_category" />
+          <ScalarProperty Name="createdby" ColumnName="createdby" />
+          <ScalarProperty Name="createdon" ColumnName="createdon" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="consumer_checkdigit" ColumnName="consumer_checkdigit" />
+          <ScalarProperty Name="billing_period_code" ColumnName="billing_period_code" />
+          <ScalarProperty Name="barcode" ColumnName="barcode" />
+          <ScalarProperty Name="checkdigit_status" ColumnName="checkdigit_status" />
+          <ScalarProperty Name="part_payment_createdon" ColumnName="part_payment_createdon" />
+          <ScalarProperty Name="part_payment_createdby" ColumnName="part_payment_createdby" />
+          <ScalarProperty Name="part_payment_arrears" ColumnName="part_payment_arrears" />
+          <ScalarProperty Name="part_payment_into" ColumnName="part_payment_into" />
+          <ScalarProperty Name="rebate_status" ColumnName="rebate_status" />
+          <ScalarProperty Name="short_description" ColumnName="short_description" />
+          <ScalarProperty Name="Department_Arrears" ColumnName="Department_Arrears" />
+          <ScalarProperty Name="Arrears_15" ColumnName="Arrears_15" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="modify_invoice">
+      <EntityTypeMapping TypeName="AdminModel.modify_invoice">
+        <MappingFragment StoreEntitySet="modify_invoice">
+          <ScalarProperty Name="sno" ColumnName="sno" />
+          <ScalarProperty Name="inword" ColumnName="inword" />
+          <ScalarProperty Name="modification_status" ColumnName="modification_status" />
+          <ScalarProperty Name="consumer_no" ColumnName="consumer_no" />
+          <ScalarProperty Name="previous_category" ColumnName="previous_category" />
+          <ScalarProperty Name="previous_area" ColumnName="previous_area" />
+          <ScalarProperty Name="previous_Storey" ColumnName="previous_Storey" />
+          <ScalarProperty Name="previous_current_Charges" ColumnName="previous_current_Charges" />
+          <ScalarProperty Name="previous_outstanding_Arrears" ColumnName="previous_outstanding_Arrears" />
+          <ScalarProperty Name="new_category" ColumnName="new_category" />
+          <ScalarProperty Name="new_area" ColumnName="new_area" />
+          <ScalarProperty Name="new_storey" ColumnName="new_storey" />
+          <ScalarProperty Name="new_current_Charge" ColumnName="new_current_Charge" />
+          <ScalarProperty Name="new_outstanding_Arrears" ColumnName="new_outstanding_Arrears" />
+          <ScalarProperty Name="zone" ColumnName="zone" />
+          <ScalarProperty Name="town" ColumnName="town" />
+          <ScalarProperty Name="billing_month" ColumnName="billing_month" />
+          <ScalarProperty Name="consumer_surcharge" ColumnName="consumer_surcharge" />
+          <ScalarProperty Name="createdby" ColumnName="createdby" />
+          <ScalarProperty Name="createdon" ColumnName="createdon" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="towns">
+      <EntityTypeMapping TypeName="AdminModel.town">
+        <MappingFragment StoreEntitySet="town">
+          <ScalarProperty Name="ZoneId" ColumnName="ZoneId" />
+          <ScalarProperty Name="AccountStatusID" ColumnName="AccountStatusID" />
+          <ScalarProperty Name="TownName" ColumnName="TownName" />
+          <ScalarProperty Name="TownID" ColumnName="TownID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="accountstatus">
+      <EntityTypeMapping TypeName="AdminModel.accountstatu">
+        <MappingFragment StoreEntitySet="accountstatus">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="AccountStatus" ColumnName="AccountStatus" />
+          <ScalarProperty Name="AccountStatusID" ColumnName="AccountStatusID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="roles">
+      <EntityTypeMapping TypeName="AdminModel.role">
+        <MappingFragment StoreEntitySet="role">
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,42 @@
+﻿@model kmcmvc.Areas.Admin.Data.town
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>town</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TownName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TownName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AccountStatusID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AccountStatusID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ZoneId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ZoneId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TownID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

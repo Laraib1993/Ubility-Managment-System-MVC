@@ -1,0 +1,185 @@
+﻿@model kmcmvc.Areas.Admin.Data.modify_consumer
+
+@{
+    ViewBag.Title = "Add Modification Consumer";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="pcoded-inner-content">
+        <div class="main-body">
+            <div class="page-wrapper">
+                <!-- Page body start -->
+                <div class="page-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <!-- Basic Inputs Validation start -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5>Add Modification Impact</h5>
+                                    @*<span>Add town of <code>.form-control</code> with <code>&lt;input&gt;</code> tag</span>*@
+                                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="card-block">
+                                    <form id="main" method="post" action="/" novalidate>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">Inword No #</label>
+                                            <div class="col-sm-10">
+                                                @Html.EditorFor(model => model.inword_no, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.inword_no, "", new { @class = "text-danger" })
+                                                <span class="messages"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">Modification Status</label>
+                                            <div class="col-sm-10">
+                                                @Html.EditorFor(model => model.modification_status, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.modification_status, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">Consumer No #</label>
+                                            <div class="col-sm-10">
+                                                @Html.EditorFor(model => model.consumer_no, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.consumer_no, "", new { @class = "text-danger" })
+                                                <span class="messages"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">Old Name</label>
+                                            <div class="col-sm-10">
+                                                @Html.EditorFor(model => model.previous_name, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.previous_name, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">Old Surname</label>
+                                            <div class="col-sm-10">
+                                                @Html.EditorFor(model => model.previous_surname, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.previous_surname, "", new { @class = "text-danger" })
+                                                <span class="messages"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">Old CNIC</label>
+                                            <div class="col-sm-10">
+                                                @Html.EditorFor(model => model.previous_cnic, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.previous_cnic, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">Old Mobile</label>
+                                            <div class="col-sm-10">
+                                                @Html.EditorFor(model => model.previous_mobile, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.previous_mobile, "", new { @class = "text-danger" })
+                                                <span class="messages"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">Old Address</label>
+                                            <div class="col-sm-10">
+                                                @Html.EditorFor(model => model.previous_address, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.previous_address, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">New Name</label>
+                                            <div class="col-sm-10">
+                                                @Html.EditorFor(model => model.new_name, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.new_name, "", new { @class = "text-danger" })
+                                                <span class="messages"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">New Surname</label>
+                                            <div class="col-sm-10">
+                                                @Html.EditorFor(model => model.new_surname, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.new_surname, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">New CNIC</label>
+                                            <div class="col-sm-10">
+                                                @Html.EditorFor(model => model.new_cnic, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.new_cnic, "", new { @class = "text-danger" })
+                                                <span class="messages"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">New Mobile</label>
+                                            <div class="col-sm-10">
+                                                @Html.EditorFor(model => model.new_mobile, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.new_mobile, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">New Address</label>
+                                            <div class="col-sm-10">
+                                                @Html.EditorFor(model => model.new_address, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.new_address, "", new { @class = "text-danger" })
+                                                <span class="messages"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">Created By</label>
+                                            <div class="col-sm-10">
+                                                @Html.EditorFor(model => model.createdby, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.createdby, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">Created On</label>
+                                            <div class="col-sm-10">
+                                                @Html.EditorFor(model => model.createdon, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.createdon, "", new { @class = "text-danger" })
+                                                <span class="messages"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">Description</label>
+                                            <div class="col-sm-10">
+                                                @Html.EditorFor(model => model.description, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.description, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">Approved By</label>
+                                            <div class="col-sm-10">
+                                                @Html.EditorFor(model => model.approvedby, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.approvedby, "", new { @class = "text-danger" })
+                                                <span class="messages"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">Status</label>
+                                            <div class="col-sm-10">
+                                                @Html.EditorFor(model => model.status, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.status, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-group row">
+                                            <label class="col-sm-2"></label>
+                                            <div class="col-sm-10">
+                                                <button type="submit" class="btn btn-primary m-b-0">Submit</button>
+                                            </div>
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+                            <!-- Basic Inputs Validation end -->
+                            @Html.ActionLink("Back to List", "Index")
+                        </div>
+                    </div>
+                </div>
+                <!-- Page body end -->
+            </div>
+        </div>
+    </div>
+}
+

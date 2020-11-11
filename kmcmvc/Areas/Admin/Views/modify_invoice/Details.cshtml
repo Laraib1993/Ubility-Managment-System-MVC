@@ -1,0 +1,186 @@
+﻿@model kmcmvc.Areas.Admin.Data.modify_invoice
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>modify_invoice</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.inword)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.inword)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.modification_status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.modification_status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.consumer_no)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.consumer_no)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.previous_category)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.previous_category)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.previous_area)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.previous_area)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.previous_Storey)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.previous_Storey)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.previous_current_Charges)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.previous_current_Charges)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.previous_outstanding_Arrears)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.previous_outstanding_Arrears)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.new_category)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.new_category)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.new_area)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.new_area)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.new_storey)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.new_storey)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.new_current_Charge)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.new_current_Charge)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.new_outstanding_Arrears)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.new_outstanding_Arrears)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.zone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.zone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.town)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.town)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.billing_month)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.billing_month)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.consumer_surcharge)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.consumer_surcharge)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.createdby)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.createdby)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.createdon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.createdon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.status)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.sno }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

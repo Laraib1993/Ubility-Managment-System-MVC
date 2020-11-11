@@ -1,0 +1,1171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="AdminModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="accountstatus">
+          <Key>
+            <PropertyRef Name="AccountStatusID" />
+          </Key>
+          <Property Name="AccountStatusID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AccountStatus" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="consumer_rebate">
+          <Key>
+            <PropertyRef Name="sno" />
+          </Key>
+          <Property Name="sno" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="modification_status" Type="varchar" MaxLength="50" />
+          <Property Name="consumer_no" Type="varchar" MaxLength="20" />
+          <Property Name="consumer_name" Type="varchar" MaxLength="120" />
+          <Property Name="category" Type="varchar" MaxLength="120" />
+          <Property Name="area" Type="int" />
+          <Property Name="outstanding_Arrears" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="after_rebate" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="description" Type="varchar(max)" />
+          <Property Name="createdby" Type="varchar" MaxLength="50" />
+          <Property Name="createdon" Type="smalldatetime" />
+          <Property Name="status" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="Dapartment_Consumer">
+          <Key>
+            <PropertyRef Name="sno" />
+          </Key>
+          <Property Name="sno" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="modification_status" Type="varchar" MaxLength="50" />
+          <Property Name="consumer_no" Type="varchar" MaxLength="20" />
+          <Property Name="consumer_name" Type="varchar" MaxLength="120" />
+          <Property Name="category" Type="varchar" MaxLength="120" />
+          <Property Name="area" Type="int" />
+          <Property Name="outstanding_Arrears" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="after_rebate" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="description" Type="varchar(max)" />
+          <Property Name="createdby" Type="varchar" MaxLength="50" />
+          <Property Name="createdon" Type="smalldatetime" />
+          <Property Name="status" Type="tinyint" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'kmc.dbo.invoice' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="invoice">
+          <Key>
+            <PropertyRef Name="sno" />
+          </Key>
+          <Property Name="sno" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="consumer_no" Type="varchar" MaxLength="20" />
+          <Property Name="consumer_code" Type="varchar" MaxLength="50" />
+          <Property Name="consumer_name" Type="varchar" MaxLength="120" />
+          <Property Name="consumer_address" Type="varchar(max)" />
+          <Property Name="category" Type="varchar" MaxLength="120" />
+          <Property Name="area" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="sqft_sqyd" Type="varchar" MaxLength="50" />
+          <Property Name="Storey" Type="int" />
+          <Property Name="zone" Type="varchar" MaxLength="50" />
+          <Property Name="town" Type="varchar" MaxLength="50" />
+          <Property Name="uc_no" Type="varchar" MaxLength="50" />
+          <Property Name="uc_name" Type="varchar" MaxLength="50" />
+          <Property Name="block" Type="varchar" MaxLength="50" />
+          <Property Name="issue_date" Type="smalldatetime" />
+          <Property Name="due_date" Type="smalldatetime" />
+          <Property Name="billing_month" Type="varchar" MaxLength="120" />
+          <Property Name="current_Charges" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="outstanding_Arrears" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="current_arrears" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="consumer_service_charges" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="within_duedate_amount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="consumer_surcharge" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="after_duedate_amount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="property_tag" Type="varchar" MaxLength="50" />
+          <Property Name="kmc_category" Type="varchar" MaxLength="100" />
+          <Property Name="createdby" Type="varchar" MaxLength="50" />
+          <Property Name="createdon" Type="smalldatetime" />
+          <Property Name="status" Type="tinyint" />
+          <Property Name="consumer_checkdigit" Type="varchar" MaxLength="50" />
+          <Property Name="billing_period_code" Type="varchar" MaxLength="50" />
+          <Property Name="barcode" Type="varchar" MaxLength="100" />
+          <Property Name="checkdigit_status" Type="int" />
+          <Property Name="part_payment_createdon" Type="smalldatetime" />
+          <Property Name="part_payment_createdby" Type="varchar" MaxLength="50" />
+          <Property Name="part_payment_arrears" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="part_payment_into" Type="varchar" MaxLength="4" />
+          <Property Name="rebate_status" Type="tinyint" />
+          <Property Name="short_description" Type="varchar" MaxLength="50" />
+          <Property Name="Department_Arrears" Type="varchar" MaxLength="50" />
+          <Property Name="Arrears_15" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="kmc_emp_rebate">
+          <Key>
+            <PropertyRef Name="sno" />
+          </Key>
+          <Property Name="sno" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="inword" Type="varchar" MaxLength="15" />
+          <Property Name="consumer_no" Type="varchar" MaxLength="20" />
+          <Property Name="emp_id" Type="varchar" MaxLength="10" />
+          <Property Name="consumer_name" Type="varchar" MaxLength="120" />
+          <Property Name="consumer_fname" Type="varchar" MaxLength="50" />
+          <Property Name="consumer_cnic" Type="varchar" MaxLength="50" />
+          <Property Name="consumer_mobile" Type="varchar" MaxLength="50" />
+          <Property Name="consumer_address" Type="varchar(max)" />
+          <Property Name="category" Type="varchar" MaxLength="120" />
+          <Property Name="area" Type="int" />
+          <Property Name="outstanding_Arrears" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="after_rebate" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="description" Type="varchar(max)" />
+          <Property Name="createdby" Type="varchar" MaxLength="50" />
+          <Property Name="createdon" Type="smalldatetime" />
+          <Property Name="status" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="modify_consumer">
+          <Key>
+            <PropertyRef Name="modify_consumerID" />
+          </Key>
+          <Property Name="modify_consumerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="inword_no" Type="varchar" MaxLength="25" />
+          <Property Name="modification_status" Type="varchar" MaxLength="100" />
+          <Property Name="consumer_no" Type="varchar" MaxLength="50" />
+          <Property Name="previous_name" Type="varchar" MaxLength="200" />
+          <Property Name="previous_surname" Type="varchar" MaxLength="50" />
+          <Property Name="previous_cnic" Type="varchar" MaxLength="50" />
+          <Property Name="previous_mobile" Type="varchar" MaxLength="50" />
+          <Property Name="previous_address" Type="varchar(max)" />
+          <Property Name="new_name" Type="varchar" MaxLength="200" />
+          <Property Name="new_surname" Type="varchar" MaxLength="200" />
+          <Property Name="new_cnic" Type="varchar" MaxLength="50" />
+          <Property Name="new_mobile" Type="varchar" MaxLength="50" />
+          <Property Name="new_address" Type="varchar(max)" />
+          <Property Name="createdby" Type="varchar" MaxLength="50" />
+          <Property Name="createdon" Type="smalldatetime" />
+          <Property Name="description" Type="varchar" MaxLength="500" />
+          <Property Name="approvedby" Type="varchar" MaxLength="50" />
+          <Property Name="status" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="modify_impact">
+          <Key>
+            <PropertyRef Name="impactID" />
+          </Key>
+          <Property Name="impactID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="inword" Type="varchar" MaxLength="15" />
+          <Property Name="modification_status" Type="varchar" MaxLength="250" />
+          <Property Name="consumer_no" Type="varchar" MaxLength="120" />
+          <Property Name="consumer_name" Type="varchar" MaxLength="120" />
+          <Property Name="previous_arrears" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="after_correction" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="difference" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="difference_percentage" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="impact" Type="varchar" MaxLength="15" />
+          <Property Name="Description" Type="varchar(max)" />
+          <Property Name="createdon" Type="smalldatetime" />
+          <Property Name="createdby" Type="varchar" MaxLength="15" />
+          <Property Name="status" Type="tinyint" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'kmc.dbo.modify_invoice' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="modify_invoice">
+          <Key>
+            <PropertyRef Name="sno" />
+          </Key>
+          <Property Name="sno" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="inword" Type="varchar" MaxLength="25" />
+          <Property Name="modification_status" Type="varchar" MaxLength="100" />
+          <Property Name="consumer_no" Type="varchar" MaxLength="120" />
+          <Property Name="previous_category" Type="varchar" MaxLength="120" />
+          <Property Name="previous_area" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="previous_Storey" Type="int" />
+          <Property Name="previous_current_Charges" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="previous_outstanding_Arrears" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="new_category" Type="varchar" MaxLength="120" />
+          <Property Name="new_area" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="new_storey" Type="int" />
+          <Property Name="new_current_Charge" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="new_outstanding_Arrears" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="zone" Type="varchar" MaxLength="50" />
+          <Property Name="town" Type="varchar" MaxLength="50" />
+          <Property Name="billing_month" Type="varchar" MaxLength="120" />
+          <Property Name="consumer_surcharge" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="createdby" Type="varchar" MaxLength="50" />
+          <Property Name="createdon" Type="smalldatetime" />
+          <Property Name="description" Type="varchar" MaxLength="500" />
+          <Property Name="status" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="MUCTBill_Records">
+          <Key>
+            <PropertyRef Name="MUCTBillID" />
+          </Key>
+          <Property Name="MUCTBillID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ConsumerNo" Type="varchar(max)" />
+          <Property Name="Zone" Type="varchar(max)" />
+          <Property Name="Town" Type="varchar(max)" />
+          <Property Name="Employee" Type="varchar(max)" />
+          <Property Name="Createdon" Type="datetime" />
+          <Property Name="createdby" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="muctemployee">
+          <Key>
+            <PropertyRef Name="muctempid" />
+          </Key>
+          <Property Name="muctempid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="employee" Type="varchar" MaxLength="50" />
+          <Property Name="designation" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="partPayment">
+          <Key>
+            <PropertyRef Name="sno" />
+          </Key>
+          <Property Name="sno" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="consumer_no" Type="varchar" MaxLength="20" />
+          <Property Name="consumer_code" Type="varchar" MaxLength="50" />
+          <Property Name="consumer_name" Type="varchar" MaxLength="120" />
+          <Property Name="consumer_address" Type="varchar(max)" />
+          <Property Name="category" Type="varchar" MaxLength="120" />
+          <Property Name="area" Type="int" />
+          <Property Name="issue_date" Type="smalldatetime" />
+          <Property Name="due_date" Type="smalldatetime" />
+          <Property Name="billing_month" Type="varchar" MaxLength="120" />
+          <Property Name="part_payment_into" Type="varchar" MaxLength="4" />
+          <Property Name="current_Charges" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="outstanding_Arrears" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="part_payemnt_arrears" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="createdby" Type="varchar" MaxLength="50" />
+          <Property Name="createdon" Type="smalldatetime" />
+          <Property Name="status" Type="tinyint" />
+          <Property Name="barcode" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="propertytype">
+          <Key>
+            <PropertyRef Name="propertyTypeID" />
+          </Key>
+          <Property Name="propertyTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="propertyTypeName" Type="nvarchar" MaxLength="50" />
+          <Property Name="PropertyCode" Type="varchar" MaxLength="1" />
+          <Property Name="SizeIn" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Rebate_cancle_history">
+          <Key>
+            <PropertyRef Name="RCID" />
+          </Key>
+          <Property Name="RCID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="inwordno" Type="varchar" MaxLength="50" />
+          <Property Name="consumer_no" Type="varchar" MaxLength="50" />
+          <Property Name="consumer_name" Type="varchar" MaxLength="120" />
+          <Property Name="pervious_outstanding" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="after_rebate_outstanding" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="difference" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="difference_percentage" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="cancledby" Type="varchar" MaxLength="50" />
+          <Property Name="cancledon" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="role">
+          <Key>
+            <PropertyRef Name="RoleID" />
+          </Key>
+          <Property Name="RoleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RoleName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="searchingsheet">
+          <Key>
+            <PropertyRef Name="SearchID" />
+          </Key>
+          <Property Name="SearchID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="inword" Type="int" />
+          <Property Name="consumer_no" Type="varchar(max)" />
+          <Property Name="zone" Type="varchar" MaxLength="100" />
+          <Property Name="Createdby" Type="varchar" MaxLength="50" />
+          <Property Name="createdon" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="searchinsheetsuspended">
+          <Key>
+            <PropertyRef Name="SSID" />
+          </Key>
+          <Property Name="SSID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="InwordNo" Type="varchar(max)" />
+          <Property Name="Consumer_No" Type="varchar(max)" />
+          <Property Name="Department" Type="varchar(max)" />
+          <Property Name="Zone" Type="varchar(max)" />
+          <Property Name="Twon" Type="varchar(max)" />
+          <Property Name="Createdon" Type="datetime" />
+          <Property Name="Createdby" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="subcategoryproperty">
+          <Key>
+            <PropertyRef Name="SubCategoryID" />
+          </Key>
+          <Property Name="SubCategoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SubCategoryName" Type="nvarchar" MaxLength="50" />
+          <Property Name="subcategorycode" Type="varchar" MaxLength="1" />
+          <Property Name="PropertyTypeID" Type="int" />
+          <Property Name="Status" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="town">
+          <Key>
+            <PropertyRef Name="TownID" />
+          </Key>
+          <Property Name="TownID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TownName" Type="nvarchar" MaxLength="50" />
+          <Property Name="AccountStatusID" Type="tinyint" />
+          <Property Name="ZoneId" Type="int" />
+        </EntityType>
+        <EntityType Name="userinfo">
+          <Key>
+            <PropertyRef Name="userinfoID" />
+          </Key>
+          <Property Name="userinfoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Username" Type="nvarchar" MaxLength="50" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="Mobile" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="CNIC" Type="nvarchar" MaxLength="25" />
+          <Property Name="Address" Type="nvarchar" MaxLength="100" />
+          <Property Name="RoleID" Type="int" />
+          <Property Name="AccountStatusID" Type="int" />
+        </EntityType>
+        <EntityType Name="users">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="username" Type="varchar" MaxLength="50" />
+          <Property Name="password" Type="varchar" MaxLength="50" />
+          <Property Name="usertypes" Type="varchar" MaxLength="50" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="zone">
+          <Key>
+            <PropertyRef Name="ZoneID" />
+          </Key>
+          <Property Name="ZoneID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ZoneName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Status" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="AdminModelStoreContainer">
+          <EntitySet Name="accountstatus" EntityType="Self.accountstatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="consumer_rebate" EntityType="Self.consumer_rebate" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Dapartment_Consumer" EntityType="Self.Dapartment_Consumer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="kmc_emp_rebate" EntityType="Self.kmc_emp_rebate" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="modify_consumer" EntityType="Self.modify_consumer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="modify_impact" EntityType="Self.modify_impact" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MUCTBill_Records" EntityType="Self.MUCTBill_Records" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="muctemployee" EntityType="Self.muctemployee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="partPayment" EntityType="Self.partPayment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="propertytype" EntityType="Self.propertytype" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rebate_cancle_history" EntityType="Self.Rebate_cancle_history" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="role" EntityType="Self.role" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="searchingsheet" EntityType="Self.searchingsheet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="searchinsheetsuspended" EntityType="Self.searchinsheetsuspended" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="subcategoryproperty" EntityType="Self.subcategoryproperty" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="town" EntityType="Self.town" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="userinfo" EntityType="Self.userinfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="zone" EntityType="Self.zone" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="invoice" EntityType="Self.invoice" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [invoice].[sno] AS [sno], 
+    [invoice].[consumer_no] AS [consumer_no], 
+    [invoice].[consumer_code] AS [consumer_code], 
+    [invoice].[consumer_name] AS [consumer_name], 
+    [invoice].[consumer_address] AS [consumer_address], 
+    [invoice].[category] AS [category], 
+    [invoice].[area] AS [area], 
+    [invoice].[sqft_sqyd] AS [sqft_sqyd], 
+    [invoice].[Storey] AS [Storey], 
+    [invoice].[zone] AS [zone], 
+    [invoice].[town] AS [town], 
+    [invoice].[uc_no] AS [uc_no], 
+    [invoice].[uc_name] AS [uc_name], 
+    [invoice].[block] AS [block], 
+    [invoice].[issue_date] AS [issue_date], 
+    [invoice].[due_date] AS [due_date], 
+    [invoice].[billing_month] AS [billing_month], 
+    [invoice].[current_Charges] AS [current_Charges], 
+    [invoice].[outstanding_Arrears] AS [outstanding_Arrears], 
+    [invoice].[current_arrears] AS [current_arrears], 
+    [invoice].[consumer_service_charges] AS [consumer_service_charges], 
+    [invoice].[within_duedate_amount] AS [within_duedate_amount], 
+    [invoice].[consumer_surcharge] AS [consumer_surcharge], 
+    [invoice].[after_duedate_amount] AS [after_duedate_amount], 
+    [invoice].[property_tag] AS [property_tag], 
+    [invoice].[kmc_category] AS [kmc_category], 
+    [invoice].[createdby] AS [createdby], 
+    [invoice].[createdon] AS [createdon], 
+    [invoice].[status] AS [status], 
+    [invoice].[consumer_checkdigit] AS [consumer_checkdigit], 
+    [invoice].[billing_period_code] AS [billing_period_code], 
+    [invoice].[barcode] AS [barcode], 
+    [invoice].[checkdigit_status] AS [checkdigit_status], 
+    [invoice].[part_payment_createdon] AS [part_payment_createdon], 
+    [invoice].[part_payment_createdby] AS [part_payment_createdby], 
+    [invoice].[part_payment_arrears] AS [part_payment_arrears], 
+    [invoice].[part_payment_into] AS [part_payment_into], 
+    [invoice].[rebate_status] AS [rebate_status], 
+    [invoice].[short_description] AS [short_description], 
+    [invoice].[Department_Arrears] AS [Department_Arrears], 
+    [invoice].[Arrears_15] AS [Arrears_15]
+    FROM [dbo].[invoice] AS [invoice]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="modify_invoice" EntityType="Self.modify_invoice" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [modify_invoice].[sno] AS [sno], 
+    [modify_invoice].[inword] AS [inword], 
+    [modify_invoice].[modification_status] AS [modification_status], 
+    [modify_invoice].[consumer_no] AS [consumer_no], 
+    [modify_invoice].[previous_category] AS [previous_category], 
+    [modify_invoice].[previous_area] AS [previous_area], 
+    [modify_invoice].[previous_Storey] AS [previous_Storey], 
+    [modify_invoice].[previous_current_Charges] AS [previous_current_Charges], 
+    [modify_invoice].[previous_outstanding_Arrears] AS [previous_outstanding_Arrears], 
+    [modify_invoice].[new_category] AS [new_category], 
+    [modify_invoice].[new_area] AS [new_area], 
+    [modify_invoice].[new_storey] AS [new_storey], 
+    [modify_invoice].[new_current_Charge] AS [new_current_Charge], 
+    [modify_invoice].[new_outstanding_Arrears] AS [new_outstanding_Arrears], 
+    [modify_invoice].[zone] AS [zone], 
+    [modify_invoice].[town] AS [town], 
+    [modify_invoice].[billing_month] AS [billing_month], 
+    [modify_invoice].[consumer_surcharge] AS [consumer_surcharge], 
+    [modify_invoice].[createdby] AS [createdby], 
+    [modify_invoice].[createdon] AS [createdon], 
+    [modify_invoice].[description] AS [description], 
+    [modify_invoice].[status] AS [status]
+    FROM [dbo].[modify_invoice] AS [modify_invoice]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AdminModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="consumer_rebate">
+          <Key>
+            <PropertyRef Name="sno" />
+          </Key>
+          <Property Name="sno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="modification_status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="consumer_no" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="consumer_name" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+          <Property Name="category" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+          <Property Name="area" Type="Int32" />
+          <Property Name="outstanding_Arrears" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="after_rebate" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="createdby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="createdon" Type="DateTime" Precision="0" />
+          <Property Name="status" Type="Byte" />
+        </EntityType>
+        <EntityType Name="Dapartment_Consumer">
+          <Key>
+            <PropertyRef Name="sno" />
+          </Key>
+          <Property Name="sno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="modification_status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="consumer_no" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="consumer_name" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+          <Property Name="category" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+          <Property Name="area" Type="Int32" />
+          <Property Name="outstanding_Arrears" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="after_rebate" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="createdby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="createdon" Type="DateTime" Precision="0" />
+          <Property Name="status" Type="Byte" />
+        </EntityType>
+        <EntityType Name="kmc_emp_rebate">
+          <Key>
+            <PropertyRef Name="sno" />
+          </Key>
+          <Property Name="sno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="inword" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="consumer_no" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="emp_id" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="consumer_name" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+          <Property Name="consumer_fname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="consumer_cnic" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="consumer_mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="consumer_address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="category" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+          <Property Name="area" Type="Int32" />
+          <Property Name="outstanding_Arrears" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="after_rebate" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="createdby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="createdon" Type="DateTime" Precision="0" />
+          <Property Name="status" Type="Byte" />
+        </EntityType>
+        <EntityType Name="modify_consumer">
+          <Key>
+            <PropertyRef Name="modify_consumerID" />
+          </Key>
+          <Property Name="modify_consumerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="inword_no" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="modification_status" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="consumer_no" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="previous_name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="previous_surname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="previous_cnic" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="previous_mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="previous_address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="new_name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="new_surname" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="new_cnic" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="new_mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="new_address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="createdby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="createdon" Type="DateTime" Precision="0" />
+          <Property Name="description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="approvedby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="Byte" />
+        </EntityType>
+        <EntityType Name="modify_impact">
+          <Key>
+            <PropertyRef Name="impactID" />
+          </Key>
+          <Property Name="impactID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="inword" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="modification_status" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="consumer_no" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+          <Property Name="consumer_name" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+          <Property Name="previous_arrears" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="after_correction" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="difference" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="difference_percentage" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="impact" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="createdon" Type="DateTime" Precision="0" />
+          <Property Name="createdby" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="Byte" />
+        </EntityType>
+        <EntityType Name="MUCTBill_Records">
+          <Key>
+            <PropertyRef Name="MUCTBillID" />
+          </Key>
+          <Property Name="MUCTBillID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ConsumerNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Zone" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Town" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Employee" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Createdon" Type="DateTime" Precision="3" />
+          <Property Name="createdby" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="muctemployee">
+          <Key>
+            <PropertyRef Name="muctempid" />
+          </Key>
+          <Property Name="muctempid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="employee" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="designation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="partPayment">
+          <Key>
+            <PropertyRef Name="sno" />
+          </Key>
+          <Property Name="sno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="consumer_no" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="consumer_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="consumer_name" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+          <Property Name="consumer_address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="category" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+          <Property Name="area" Type="Int32" />
+          <Property Name="issue_date" Type="DateTime" Precision="0" />
+          <Property Name="due_date" Type="DateTime" Precision="0" />
+          <Property Name="billing_month" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+          <Property Name="part_payment_into" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="current_Charges" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="outstanding_Arrears" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="part_payemnt_arrears" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="createdby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="createdon" Type="DateTime" Precision="0" />
+          <Property Name="status" Type="Byte" />
+          <Property Name="barcode" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="propertytype">
+          <Key>
+            <PropertyRef Name="propertyTypeID" />
+          </Key>
+          <Property Name="propertyTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="propertyTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyCode" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="SizeIn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Rebate_cancle_history">
+          <Key>
+            <PropertyRef Name="RCID" />
+          </Key>
+          <Property Name="RCID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="inwordno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="consumer_no" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="consumer_name" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+          <Property Name="pervious_outstanding" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="after_rebate_outstanding" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="difference" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="difference_percentage" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="cancledby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cancledon" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="searchingsheet">
+          <Key>
+            <PropertyRef Name="SearchID" />
+          </Key>
+          <Property Name="SearchID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="inword" Type="Int32" />
+          <Property Name="consumer_no" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="zone" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Createdby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="createdon" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="searchinsheetsuspended">
+          <Key>
+            <PropertyRef Name="SSID" />
+          </Key>
+          <Property Name="SSID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="InwordNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Consumer_No" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Department" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Zone" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Twon" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Createdon" Type="DateTime" Precision="3" />
+          <Property Name="Createdby" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="subcategoryproperty">
+          <Key>
+            <PropertyRef Name="SubCategoryID" />
+          </Key>
+          <Property Name="SubCategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SubCategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="subcategorycode" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="PropertyTypeID" Type="Int32" />
+          <Property Name="Status" Type="Byte" />
+        </EntityType>
+        <EntityType Name="userinfo">
+          <Key>
+            <PropertyRef Name="userinfoID" />
+          </Key>
+          <Property Name="userinfoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CNIC" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="RoleID" Type="Int32" />
+          <Property Name="AccountStatusID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="user">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="usertypes" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="zone">
+          <Key>
+            <PropertyRef Name="ZoneID" />
+          </Key>
+          <Property Name="ZoneID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ZoneName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Status" Type="Byte" Nullable="false" />
+        </EntityType>
+        <EntityType Name="invoice">
+          <Key>
+            <PropertyRef Name="sno" />
+          </Key>
+          <Property Name="sno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="consumer_no" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="consumer_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="consumer_name" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+          <Property Name="consumer_address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="category" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+          <Property Name="area" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="sqft_sqyd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Storey" Type="Int32" />
+          <Property Name="zone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="town" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="uc_no" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="uc_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="block" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="issue_date" Type="DateTime" Precision="0" />
+          <Property Name="due_date" Type="DateTime" Precision="0" />
+          <Property Name="billing_month" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+          <Property Name="current_Charges" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="outstanding_Arrears" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="current_arrears" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="consumer_service_charges" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="within_duedate_amount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="consumer_surcharge" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="after_duedate_amount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="property_tag" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="kmc_category" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="createdby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="createdon" Type="DateTime" Precision="0" />
+          <Property Name="status" Type="Byte" />
+          <Property Name="consumer_checkdigit" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="billing_period_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="barcode" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="checkdigit_status" Type="Int32" />
+          <Property Name="part_payment_createdon" Type="DateTime" Precision="0" />
+          <Property Name="part_payment_createdby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="part_payment_arrears" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="part_payment_into" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="rebate_status" Type="Byte" />
+          <Property Name="short_description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Department_Arrears" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Arrears_15" Type="Decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="modify_invoice">
+          <Key>
+            <PropertyRef Name="sno" />
+          </Key>
+          <Property Name="sno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="inword" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="modification_status" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="consumer_no" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+          <Property Name="previous_category" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+          <Property Name="previous_area" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="previous_Storey" Type="Int32" />
+          <Property Name="previous_current_Charges" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="previous_outstanding_Arrears" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="new_category" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+          <Property Name="new_area" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="new_storey" Type="Int32" />
+          <Property Name="new_current_Charge" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="new_outstanding_Arrears" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="zone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="town" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="billing_month" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+          <Property Name="consumer_surcharge" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="createdby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="createdon" Type="DateTime" Precision="0" />
+          <Property Name="description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="Byte" />
+        </EntityType>
+        <EntityContainer Name="AdminEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="consumer_rebate" EntityType="Self.consumer_rebate" />
+          <EntitySet Name="Dapartment_Consumer" EntityType="Self.Dapartment_Consumer" />
+          <EntitySet Name="kmc_emp_rebate" EntityType="Self.kmc_emp_rebate" />
+          <EntitySet Name="modify_consumer" EntityType="Self.modify_consumer" />
+          <EntitySet Name="modify_impact" EntityType="Self.modify_impact" />
+          <EntitySet Name="MUCTBill_Records" EntityType="Self.MUCTBill_Records" />
+          <EntitySet Name="muctemployees" EntityType="Self.muctemployee" />
+          <EntitySet Name="partPayments" EntityType="Self.partPayment" />
+          <EntitySet Name="propertytypes" EntityType="Self.propertytype" />
+          <EntitySet Name="Rebate_cancle_history" EntityType="Self.Rebate_cancle_history" />
+          <EntitySet Name="searchingsheets" EntityType="Self.searchingsheet" />
+          <EntitySet Name="searchinsheetsuspendeds" EntityType="Self.searchinsheetsuspended" />
+          <EntitySet Name="subcategoryproperties" EntityType="Self.subcategoryproperty" />
+          <EntitySet Name="userinfoes" EntityType="Self.userinfo" />
+          <EntitySet Name="users" EntityType="Self.user" />
+          <EntitySet Name="zones" EntityType="Self.zone" />
+          <EntitySet Name="invoices" EntityType="Self.invoice" />
+          <EntitySet Name="modify_invoice" EntityType="Self.modify_invoice" />
+          <EntitySet Name="towns" EntityType="AdminModel.town" />
+          <EntitySet Name="accountstatus" EntityType="AdminModel.accountstatu" />
+          <EntitySet Name="roles" EntityType="AdminModel.role" />
+        </EntityContainer>
+        <EntityType Name="town">
+          <Key>
+            <PropertyRef Name="TownID" />
+          </Key>
+          <Property Name="TownID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TownName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AccountStatusID" Type="Byte" />
+          <Property Name="ZoneId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="accountstatu">
+          <Key>
+            <PropertyRef Name="AccountStatusID" />
+          </Key>
+          <Property Name="AccountStatusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AccountStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="role">
+          <Key>
+            <PropertyRef Name="RoleID" />
+          </Key>
+          <Property Name="RoleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RoleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AdminModelStoreContainer" CdmEntityContainer="AdminEntities">
+          <EntitySetMapping Name="consumer_rebate">
+            <EntityTypeMapping TypeName="AdminModel.consumer_rebate">
+              <MappingFragment StoreEntitySet="consumer_rebate">
+                <ScalarProperty Name="sno" ColumnName="sno" />
+                <ScalarProperty Name="modification_status" ColumnName="modification_status" />
+                <ScalarProperty Name="consumer_no" ColumnName="consumer_no" />
+                <ScalarProperty Name="consumer_name" ColumnName="consumer_name" />
+                <ScalarProperty Name="category" ColumnName="category" />
+                <ScalarProperty Name="area" ColumnName="area" />
+                <ScalarProperty Name="outstanding_Arrears" ColumnName="outstanding_Arrears" />
+                <ScalarProperty Name="after_rebate" ColumnName="after_rebate" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="createdon" ColumnName="createdon" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Dapartment_Consumer">
+            <EntityTypeMapping TypeName="AdminModel.Dapartment_Consumer">
+              <MappingFragment StoreEntitySet="Dapartment_Consumer">
+                <ScalarProperty Name="sno" ColumnName="sno" />
+                <ScalarProperty Name="modification_status" ColumnName="modification_status" />
+                <ScalarProperty Name="consumer_no" ColumnName="consumer_no" />
+                <ScalarProperty Name="consumer_name" ColumnName="consumer_name" />
+                <ScalarProperty Name="category" ColumnName="category" />
+                <ScalarProperty Name="area" ColumnName="area" />
+                <ScalarProperty Name="outstanding_Arrears" ColumnName="outstanding_Arrears" />
+                <ScalarProperty Name="after_rebate" ColumnName="after_rebate" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="createdon" ColumnName="createdon" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="kmc_emp_rebate">
+            <EntityTypeMapping TypeName="AdminModel.kmc_emp_rebate">
+              <MappingFragment StoreEntitySet="kmc_emp_rebate">
+                <ScalarProperty Name="sno" ColumnName="sno" />
+                <ScalarProperty Name="inword" ColumnName="inword" />
+                <ScalarProperty Name="consumer_no" ColumnName="consumer_no" />
+                <ScalarProperty Name="emp_id" ColumnName="emp_id" />
+                <ScalarProperty Name="consumer_name" ColumnName="consumer_name" />
+                <ScalarProperty Name="consumer_fname" ColumnName="consumer_fname" />
+                <ScalarProperty Name="consumer_cnic" ColumnName="consumer_cnic" />
+                <ScalarProperty Name="consumer_mobile" ColumnName="consumer_mobile" />
+                <ScalarProperty Name="consumer_address" ColumnName="consumer_address" />
+                <ScalarProperty Name="category" ColumnName="category" />
+                <ScalarProperty Name="area" ColumnName="area" />
+                <ScalarProperty Name="outstanding_Arrears" ColumnName="outstanding_Arrears" />
+                <ScalarProperty Name="after_rebate" ColumnName="after_rebate" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="createdon" ColumnName="createdon" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="modify_consumer">
+            <EntityTypeMapping TypeName="AdminModel.modify_consumer">
+              <MappingFragment StoreEntitySet="modify_consumer">
+                <ScalarProperty Name="modify_consumerID" ColumnName="modify_consumerID" />
+                <ScalarProperty Name="inword_no" ColumnName="inword_no" />
+                <ScalarProperty Name="modification_status" ColumnName="modification_status" />
+                <ScalarProperty Name="consumer_no" ColumnName="consumer_no" />
+                <ScalarProperty Name="previous_name" ColumnName="previous_name" />
+                <ScalarProperty Name="previous_surname" ColumnName="previous_surname" />
+                <ScalarProperty Name="previous_cnic" ColumnName="previous_cnic" />
+                <ScalarProperty Name="previous_mobile" ColumnName="previous_mobile" />
+                <ScalarProperty Name="previous_address" ColumnName="previous_address" />
+                <ScalarProperty Name="new_name" ColumnName="new_name" />
+                <ScalarProperty Name="new_surname" ColumnName="new_surname" />
+                <ScalarProperty Name="new_cnic" ColumnName="new_cnic" />
+                <ScalarProperty Name="new_mobile" ColumnName="new_mobile" />
+                <ScalarProperty Name="new_address" ColumnName="new_address" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="createdon" ColumnName="createdon" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="approvedby" ColumnName="approvedby" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="modify_impact">
+            <EntityTypeMapping TypeName="AdminModel.modify_impact">
+              <MappingFragment StoreEntitySet="modify_impact">
+                <ScalarProperty Name="impactID" ColumnName="impactID" />
+                <ScalarProperty Name="inword" ColumnName="inword" />
+                <ScalarProperty Name="modification_status" ColumnName="modification_status" />
+                <ScalarProperty Name="consumer_no" ColumnName="consumer_no" />
+                <ScalarProperty Name="consumer_name" ColumnName="consumer_name" />
+                <ScalarProperty Name="previous_arrears" ColumnName="previous_arrears" />
+                <ScalarProperty Name="after_correction" ColumnName="after_correction" />
+                <ScalarProperty Name="difference" ColumnName="difference" />
+                <ScalarProperty Name="difference_percentage" ColumnName="difference_percentage" />
+                <ScalarProperty Name="impact" ColumnName="impact" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="createdon" ColumnName="createdon" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MUCTBill_Records">
+            <EntityTypeMapping TypeName="AdminModel.MUCTBill_Records">
+              <MappingFragment StoreEntitySet="MUCTBill_Records">
+                <ScalarProperty Name="MUCTBillID" ColumnName="MUCTBillID" />
+                <ScalarProperty Name="ConsumerNo" ColumnName="ConsumerNo" />
+                <ScalarProperty Name="Zone" ColumnName="Zone" />
+                <ScalarProperty Name="Town" ColumnName="Town" />
+                <ScalarProperty Name="Employee" ColumnName="Employee" />
+                <ScalarProperty Name="Createdon" ColumnName="Createdon" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="muctemployees">
+            <EntityTypeMapping TypeName="AdminModel.muctemployee">
+              <MappingFragment StoreEntitySet="muctemployee">
+                <ScalarProperty Name="muctempid" ColumnName="muctempid" />
+                <ScalarProperty Name="employee" ColumnName="employee" />
+                <ScalarProperty Name="designation" ColumnName="designation" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="partPayments">
+            <EntityTypeMapping TypeName="AdminModel.partPayment">
+              <MappingFragment StoreEntitySet="partPayment">
+                <ScalarProperty Name="sno" ColumnName="sno" />
+                <ScalarProperty Name="consumer_no" ColumnName="consumer_no" />
+                <ScalarProperty Name="consumer_code" ColumnName="consumer_code" />
+                <ScalarProperty Name="consumer_name" ColumnName="consumer_name" />
+                <ScalarProperty Name="consumer_address" ColumnName="consumer_address" />
+                <ScalarProperty Name="category" ColumnName="category" />
+                <ScalarProperty Name="area" ColumnName="area" />
+                <ScalarProperty Name="issue_date" ColumnName="issue_date" />
+                <ScalarProperty Name="due_date" ColumnName="due_date" />
+                <ScalarProperty Name="billing_month" ColumnName="billing_month" />
+                <ScalarProperty Name="part_payment_into" ColumnName="part_payment_into" />
+                <ScalarProperty Name="current_Charges" ColumnName="current_Charges" />
+                <ScalarProperty Name="outstanding_Arrears" ColumnName="outstanding_Arrears" />
+                <ScalarProperty Name="part_payemnt_arrears" ColumnName="part_payemnt_arrears" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="createdon" ColumnName="createdon" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="barcode" ColumnName="barcode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="propertytypes">
+            <EntityTypeMapping TypeName="AdminModel.propertytype">
+              <MappingFragment StoreEntitySet="propertytype">
+                <ScalarProperty Name="propertyTypeID" ColumnName="propertyTypeID" />
+                <ScalarProperty Name="propertyTypeName" ColumnName="propertyTypeName" />
+                <ScalarProperty Name="PropertyCode" ColumnName="PropertyCode" />
+                <ScalarProperty Name="SizeIn" ColumnName="SizeIn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rebate_cancle_history">
+            <EntityTypeMapping TypeName="AdminModel.Rebate_cancle_history">
+              <MappingFragment StoreEntitySet="Rebate_cancle_history">
+                <ScalarProperty Name="RCID" ColumnName="RCID" />
+                <ScalarProperty Name="inwordno" ColumnName="inwordno" />
+                <ScalarProperty Name="consumer_no" ColumnName="consumer_no" />
+                <ScalarProperty Name="consumer_name" ColumnName="consumer_name" />
+                <ScalarProperty Name="pervious_outstanding" ColumnName="pervious_outstanding" />
+                <ScalarProperty Name="after_rebate_outstanding" ColumnName="after_rebate_outstanding" />
+                <ScalarProperty Name="difference" ColumnName="difference" />
+                <ScalarProperty Name="difference_percentage" ColumnName="difference_percentage" />
+                <ScalarProperty Name="cancledby" ColumnName="cancledby" />
+                <ScalarProperty Name="cancledon" ColumnName="cancledon" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="searchingsheets">
+            <EntityTypeMapping TypeName="AdminModel.searchingsheet">
+              <MappingFragment StoreEntitySet="searchingsheet">
+                <ScalarProperty Name="SearchID" ColumnName="SearchID" />
+                <ScalarProperty Name="inword" ColumnName="inword" />
+                <ScalarProperty Name="consumer_no" ColumnName="consumer_no" />
+                <ScalarProperty Name="zone" ColumnName="zone" />
+                <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+                <ScalarProperty Name="createdon" ColumnName="createdon" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="searchinsheetsuspendeds">
+            <EntityTypeMapping TypeName="AdminModel.searchinsheetsuspended">
+              <MappingFragment StoreEntitySet="searchinsheetsuspended">
+                <ScalarProperty Name="SSID" ColumnName="SSID" />
+                <ScalarProperty Name="InwordNo" ColumnName="InwordNo" />
+                <ScalarProperty Name="Consumer_No" ColumnName="Consumer_No" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="Zone" ColumnName="Zone" />
+                <ScalarProperty Name="Twon" ColumnName="Twon" />
+                <ScalarProperty Name="Createdon" ColumnName="Createdon" />
+                <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="subcategoryproperties">
+            <EntityTypeMapping TypeName="AdminModel.subcategoryproperty">
+              <MappingFragment StoreEntitySet="subcategoryproperty">
+                <ScalarProperty Name="SubCategoryID" ColumnName="SubCategoryID" />
+                <ScalarProperty Name="SubCategoryName" ColumnName="SubCategoryName" />
+                <ScalarProperty Name="subcategorycode" ColumnName="subcategorycode" />
+                <ScalarProperty Name="PropertyTypeID" ColumnName="PropertyTypeID" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="userinfoes">
+            <EntityTypeMapping TypeName="AdminModel.userinfo">
+              <MappingFragment StoreEntitySet="userinfo">
+                <ScalarProperty Name="userinfoID" ColumnName="userinfoID" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="CNIC" ColumnName="CNIC" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="AccountStatusID" ColumnName="AccountStatusID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="users">
+            <EntityTypeMapping TypeName="AdminModel.user">
+              <MappingFragment StoreEntitySet="users">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="usertypes" ColumnName="usertypes" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="zones">
+            <EntityTypeMapping TypeName="AdminModel.zone">
+              <MappingFragment StoreEntitySet="zone">
+                <ScalarProperty Name="ZoneID" ColumnName="ZoneID" />
+                <ScalarProperty Name="ZoneName" ColumnName="ZoneName" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="invoices">
+            <EntityTypeMapping TypeName="AdminModel.invoice">
+              <MappingFragment StoreEntitySet="invoice">
+                <ScalarProperty Name="sno" ColumnName="sno" />
+                <ScalarProperty Name="consumer_no" ColumnName="consumer_no" />
+                <ScalarProperty Name="consumer_code" ColumnName="consumer_code" />
+                <ScalarProperty Name="consumer_name" ColumnName="consumer_name" />
+                <ScalarProperty Name="consumer_address" ColumnName="consumer_address" />
+                <ScalarProperty Name="category" ColumnName="category" />
+                <ScalarProperty Name="area" ColumnName="area" />
+                <ScalarProperty Name="sqft_sqyd" ColumnName="sqft_sqyd" />
+                <ScalarProperty Name="Storey" ColumnName="Storey" />
+                <ScalarProperty Name="zone" ColumnName="zone" />
+                <ScalarProperty Name="town" ColumnName="town" />
+                <ScalarProperty Name="uc_no" ColumnName="uc_no" />
+                <ScalarProperty Name="uc_name" ColumnName="uc_name" />
+                <ScalarProperty Name="block" ColumnName="block" />
+                <ScalarProperty Name="issue_date" ColumnName="issue_date" />
+                <ScalarProperty Name="due_date" ColumnName="due_date" />
+                <ScalarProperty Name="billing_month" ColumnName="billing_month" />
+                <ScalarProperty Name="current_Charges" ColumnName="current_Charges" />
+                <ScalarProperty Name="outstanding_Arrears" ColumnName="outstanding_Arrears" />
+                <ScalarProperty Name="current_arrears" ColumnName="current_arrears" />
+                <ScalarProperty Name="consumer_service_charges" ColumnName="consumer_service_charges" />
+                <ScalarProperty Name="within_duedate_amount" ColumnName="within_duedate_amount" />
+                <ScalarProperty Name="consumer_surcharge" ColumnName="consumer_surcharge" />
+                <ScalarProperty Name="after_duedate_amount" ColumnName="after_duedate_amount" />
+                <ScalarProperty Name="property_tag" ColumnName="property_tag" />
+                <ScalarProperty Name="kmc_category" ColumnName="kmc_category" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="createdon" ColumnName="createdon" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="consumer_checkdigit" ColumnName="consumer_checkdigit" />
+                <ScalarProperty Name="billing_period_code" ColumnName="billing_period_code" />
+                <ScalarProperty Name="barcode" ColumnName="barcode" />
+                <ScalarProperty Name="checkdigit_status" ColumnName="checkdigit_status" />
+                <ScalarProperty Name="part_payment_createdon" ColumnName="part_payment_createdon" />
+                <ScalarProperty Name="part_payment_createdby" ColumnName="part_payment_createdby" />
+                <ScalarProperty Name="part_payment_arrears" ColumnName="part_payment_arrears" />
+                <ScalarProperty Name="part_payment_into" ColumnName="part_payment_into" />
+                <ScalarProperty Name="rebate_status" ColumnName="rebate_status" />
+                <ScalarProperty Name="short_description" ColumnName="short_description" />
+                <ScalarProperty Name="Department_Arrears" ColumnName="Department_Arrears" />
+                <ScalarProperty Name="Arrears_15" ColumnName="Arrears_15" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="modify_invoice">
+            <EntityTypeMapping TypeName="AdminModel.modify_invoice">
+              <MappingFragment StoreEntitySet="modify_invoice">
+                <ScalarProperty Name="sno" ColumnName="sno" />
+                <ScalarProperty Name="inword" ColumnName="inword" />
+                <ScalarProperty Name="modification_status" ColumnName="modification_status" />
+                <ScalarProperty Name="consumer_no" ColumnName="consumer_no" />
+                <ScalarProperty Name="previous_category" ColumnName="previous_category" />
+                <ScalarProperty Name="previous_area" ColumnName="previous_area" />
+                <ScalarProperty Name="previous_Storey" ColumnName="previous_Storey" />
+                <ScalarProperty Name="previous_current_Charges" ColumnName="previous_current_Charges" />
+                <ScalarProperty Name="previous_outstanding_Arrears" ColumnName="previous_outstanding_Arrears" />
+                <ScalarProperty Name="new_category" ColumnName="new_category" />
+                <ScalarProperty Name="new_area" ColumnName="new_area" />
+                <ScalarProperty Name="new_storey" ColumnName="new_storey" />
+                <ScalarProperty Name="new_current_Charge" ColumnName="new_current_Charge" />
+                <ScalarProperty Name="new_outstanding_Arrears" ColumnName="new_outstanding_Arrears" />
+                <ScalarProperty Name="zone" ColumnName="zone" />
+                <ScalarProperty Name="town" ColumnName="town" />
+                <ScalarProperty Name="billing_month" ColumnName="billing_month" />
+                <ScalarProperty Name="consumer_surcharge" ColumnName="consumer_surcharge" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="createdon" ColumnName="createdon" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="towns">
+            <EntityTypeMapping TypeName="AdminModel.town">
+              <MappingFragment StoreEntitySet="town">
+                <ScalarProperty Name="ZoneId" ColumnName="ZoneId" />
+                <ScalarProperty Name="AccountStatusID" ColumnName="AccountStatusID" />
+                <ScalarProperty Name="TownName" ColumnName="TownName" />
+                <ScalarProperty Name="TownID" ColumnName="TownID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="accountstatus">
+            <EntityTypeMapping TypeName="AdminModel.accountstatu">
+              <MappingFragment StoreEntitySet="accountstatus">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="AccountStatus" ColumnName="AccountStatus" />
+                <ScalarProperty Name="AccountStatusID" ColumnName="AccountStatusID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="roles">
+            <EntityTypeMapping TypeName="AdminModel.role">
+              <MappingFragment StoreEntitySet="role">
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

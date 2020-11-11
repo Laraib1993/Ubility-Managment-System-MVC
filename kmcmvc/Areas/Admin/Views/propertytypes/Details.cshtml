@@ -1,0 +1,42 @@
+﻿@model kmcmvc.Areas.Admin.Data.propertytype
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>propertytype</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.propertyTypeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.propertyTypeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PropertyCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PropertyCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SizeIn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SizeIn)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.propertyTypeID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

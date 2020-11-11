@@ -1,0 +1,96 @@
+﻿@model kmcmvc.Areas.Admin.Data.Rebate_cancle_history
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Rebate_cancle_history</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.inwordno)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.inwordno)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.consumer_no)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.consumer_no)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.consumer_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.consumer_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pervious_outstanding)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pervious_outstanding)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.after_rebate_outstanding)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.after_rebate_outstanding)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.difference)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.difference)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.difference_percentage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.difference_percentage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cancledby)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cancledby)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cancledon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cancledon)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

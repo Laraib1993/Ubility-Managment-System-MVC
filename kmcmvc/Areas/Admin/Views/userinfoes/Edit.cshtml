@@ -1,0 +1,159 @@
+﻿@model kmcmvc.Areas.Admin.Data.userinfo
+
+@{
+    ViewBag.Title = "Update User Info";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+
+    <div class="pcoded-inner-content">
+        <div class="main-body">
+            <div class="page-wrapper">
+                <!-- Page body start -->
+                <div class="page-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <!-- Basic Inputs Validation start -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5>Update MUCT User Info</h5>
+                                    @*<span>Add town of <code>.form-control</code> with <code>&lt;input&gt;</code> tag</span>*@
+                                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                    @Html.HiddenFor(model => model.userinfoID)
+                                </div>
+                                <div class="card-block">
+                                    <form id="main" method="post" action="/" novalidate>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">User Name</label>
+                                            <div class="col-sm-10">
+                                                @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+                                                <span class="messages"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">Full Name</label>
+                                            <div class="col-sm-10">
+                                                @Html.EditorFor(model => model.FullName, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.FullName, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">Password</label>
+                                            <div class="col-sm-10">
+                                                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                                <span class="messages"></span>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">Mobile</label>
+                                            <div class="col-sm-10">
+                                                @Html.EditorFor(model => model.Mobile, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.Mobile, "", new { @class = "text-danger" })
+                                                <span class="messages"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">Email</label>
+                                            <div class="col-sm-10">
+                                                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">CNIC</label>
+                                            <div class="col-sm-10">
+                                                @Html.EditorFor(model => model.CNIC, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.CNIC, "", new { @class = "text-danger" })
+                                                <span class="messages"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">Address</label>
+                                            <div class="col-sm-10">
+                                                @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+                                                <span class="messages"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">Roles</label>
+                                            <div class="col-sm-10">
+                                                <h4 class="sub-title">Select Role For An Account</h4>
+                                                <div class="form-radio">
+                                                    <div class="radio radio-outline radio-inline">
+                                                        @foreach (var ML in Model.rolelist)
+                                                        {
+                                                            <div class="radio radio-outline radio-inline">
+                                                                <label>
+                                                                    @Html.RadioButton("RoleID", ML.RoleID, new { @class = "radio" })<i class="helper"></i> @ML.RoleName
+                                                                </label>
+                                                            </div>
+
+                                                        }
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">Status</label>
+                                            <div class="col-sm-10">
+                                                <h4 class="sub-title">Select Status For An Account</h4>
+                                                <div class="form-radio">
+                                                    <div class="radio radio-outline radio-inline">
+                                                        @foreach (var ML in Model.statuslist)
+                                                        {
+                                                            <div class="radio radio-outline radio-inline">
+                                                                <label>
+                                                                    @Html.RadioButton("AccountStatusID", ML.AccountStatusID, new { @class = "radio" })<i class="helper"></i> @ML.AccountStatus
+                                                                </label>
+                                                            </div>
+
+                                                        }
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-group row">
+                                            <label class="col-sm-2"></label>
+                                            <div class="col-sm-10">
+                                                <button type="submit" class="btn btn-primary m-b-0">Submit</button>
+                                            </div>
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+                            <!-- Basic Inputs Validation end -->
+                            <div class="card-block tooltip-icon button-list">
+                                <p>Use following button <code>according to your needs.</code></p>
+                                <a type="button" href="/Admin/userinfoes/Index" class="btn btn-primary btn-icon waves-effect waves-light" data-toggle="tooltip" data-placement="left" title="Back To Dashboard">
+                                    <i class="icofont icofont-home"></i>
+                                </a>
+                                <a type="button" href="/Admin/userinfoes/Index" class="btn btn-success btn-icon waves-effect waves-light" data-toggle="tooltip" data-placement="bottom" title="Back To Users List">
+                                    <i class="icofont icofont-paper-plane"></i>
+                                </a>
+                                <a type="button" class="btn btn-danger btn-icon waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Back To Profile">
+                                    <i class="icofont icofont-boy"></i>
+                                </a>
+                                <a type="button" class="btn btn-warning btn-icon waves-effect waves-light" data-toggle="tooltip" data-placement="right" title="Logout">
+                                    <i class="icofont icofont-logout"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Page body end -->
+            </div>
+        </div>
+    </div>
+
+}

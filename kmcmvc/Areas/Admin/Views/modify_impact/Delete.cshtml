@@ -1,0 +1,128 @@
+﻿@model kmcmvc.Areas.Admin.Data.modify_impact
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>modify_impact</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.inword)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.inword)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.modification_status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.modification_status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.consumer_no)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.consumer_no)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.consumer_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.consumer_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.previous_arrears)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.previous_arrears)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.after_correction)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.after_correction)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.difference)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.difference)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.difference_percentage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.difference_percentage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.impact)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.impact)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.createdon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.createdon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.createdby)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.createdby)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.status)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,168 @@
+﻿@model kmcmvc.Areas.Admin.Data.modify_consumer
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>modify_consumer</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.inword_no)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.inword_no)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.modification_status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.modification_status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.consumer_no)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.consumer_no)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.previous_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.previous_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.previous_surname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.previous_surname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.previous_cnic)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.previous_cnic)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.previous_mobile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.previous_mobile)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.previous_address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.previous_address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.new_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.new_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.new_surname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.new_surname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.new_cnic)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.new_cnic)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.new_mobile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.new_mobile)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.new_address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.new_address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.createdby)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.createdby)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.createdon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.createdon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.approvedby)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.approvedby)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.status)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

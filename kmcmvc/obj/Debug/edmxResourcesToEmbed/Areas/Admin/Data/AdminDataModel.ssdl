@@ -1,0 +1,429 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AdminModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="accountstatus">
+    <Key>
+      <PropertyRef Name="AccountStatusID" />
+    </Key>
+    <Property Name="AccountStatusID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AccountStatus" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="consumer_rebate">
+    <Key>
+      <PropertyRef Name="sno" />
+    </Key>
+    <Property Name="sno" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="modification_status" Type="varchar" MaxLength="50" />
+    <Property Name="consumer_no" Type="varchar" MaxLength="20" />
+    <Property Name="consumer_name" Type="varchar" MaxLength="120" />
+    <Property Name="category" Type="varchar" MaxLength="120" />
+    <Property Name="area" Type="int" />
+    <Property Name="outstanding_Arrears" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="after_rebate" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="description" Type="varchar(max)" />
+    <Property Name="createdby" Type="varchar" MaxLength="50" />
+    <Property Name="createdon" Type="smalldatetime" />
+    <Property Name="status" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="Dapartment_Consumer">
+    <Key>
+      <PropertyRef Name="sno" />
+    </Key>
+    <Property Name="sno" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="modification_status" Type="varchar" MaxLength="50" />
+    <Property Name="consumer_no" Type="varchar" MaxLength="20" />
+    <Property Name="consumer_name" Type="varchar" MaxLength="120" />
+    <Property Name="category" Type="varchar" MaxLength="120" />
+    <Property Name="area" Type="int" />
+    <Property Name="outstanding_Arrears" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="after_rebate" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="description" Type="varchar(max)" />
+    <Property Name="createdby" Type="varchar" MaxLength="50" />
+    <Property Name="createdon" Type="smalldatetime" />
+    <Property Name="status" Type="tinyint" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'kmc.dbo.invoice' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="invoice">
+    <Key>
+      <PropertyRef Name="sno" />
+    </Key>
+    <Property Name="sno" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="consumer_no" Type="varchar" MaxLength="20" />
+    <Property Name="consumer_code" Type="varchar" MaxLength="50" />
+    <Property Name="consumer_name" Type="varchar" MaxLength="120" />
+    <Property Name="consumer_address" Type="varchar(max)" />
+    <Property Name="category" Type="varchar" MaxLength="120" />
+    <Property Name="area" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="sqft_sqyd" Type="varchar" MaxLength="50" />
+    <Property Name="Storey" Type="int" />
+    <Property Name="zone" Type="varchar" MaxLength="50" />
+    <Property Name="town" Type="varchar" MaxLength="50" />
+    <Property Name="uc_no" Type="varchar" MaxLength="50" />
+    <Property Name="uc_name" Type="varchar" MaxLength="50" />
+    <Property Name="block" Type="varchar" MaxLength="50" />
+    <Property Name="issue_date" Type="smalldatetime" />
+    <Property Name="due_date" Type="smalldatetime" />
+    <Property Name="billing_month" Type="varchar" MaxLength="120" />
+    <Property Name="current_Charges" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="outstanding_Arrears" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="current_arrears" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="consumer_service_charges" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="within_duedate_amount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="consumer_surcharge" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="after_duedate_amount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="property_tag" Type="varchar" MaxLength="50" />
+    <Property Name="kmc_category" Type="varchar" MaxLength="100" />
+    <Property Name="createdby" Type="varchar" MaxLength="50" />
+    <Property Name="createdon" Type="smalldatetime" />
+    <Property Name="status" Type="tinyint" />
+    <Property Name="consumer_checkdigit" Type="varchar" MaxLength="50" />
+    <Property Name="billing_period_code" Type="varchar" MaxLength="50" />
+    <Property Name="barcode" Type="varchar" MaxLength="100" />
+    <Property Name="checkdigit_status" Type="int" />
+    <Property Name="part_payment_createdon" Type="smalldatetime" />
+    <Property Name="part_payment_createdby" Type="varchar" MaxLength="50" />
+    <Property Name="part_payment_arrears" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="part_payment_into" Type="varchar" MaxLength="4" />
+    <Property Name="rebate_status" Type="tinyint" />
+    <Property Name="short_description" Type="varchar" MaxLength="50" />
+    <Property Name="Department_Arrears" Type="varchar" MaxLength="50" />
+    <Property Name="Arrears_15" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="kmc_emp_rebate">
+    <Key>
+      <PropertyRef Name="sno" />
+    </Key>
+    <Property Name="sno" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="inword" Type="varchar" MaxLength="15" />
+    <Property Name="consumer_no" Type="varchar" MaxLength="20" />
+    <Property Name="emp_id" Type="varchar" MaxLength="10" />
+    <Property Name="consumer_name" Type="varchar" MaxLength="120" />
+    <Property Name="consumer_fname" Type="varchar" MaxLength="50" />
+    <Property Name="consumer_cnic" Type="varchar" MaxLength="50" />
+    <Property Name="consumer_mobile" Type="varchar" MaxLength="50" />
+    <Property Name="consumer_address" Type="varchar(max)" />
+    <Property Name="category" Type="varchar" MaxLength="120" />
+    <Property Name="area" Type="int" />
+    <Property Name="outstanding_Arrears" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="after_rebate" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="description" Type="varchar(max)" />
+    <Property Name="createdby" Type="varchar" MaxLength="50" />
+    <Property Name="createdon" Type="smalldatetime" />
+    <Property Name="status" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="modify_consumer">
+    <Key>
+      <PropertyRef Name="modify_consumerID" />
+    </Key>
+    <Property Name="modify_consumerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="inword_no" Type="varchar" MaxLength="25" />
+    <Property Name="modification_status" Type="varchar" MaxLength="100" />
+    <Property Name="consumer_no" Type="varchar" MaxLength="50" />
+    <Property Name="previous_name" Type="varchar" MaxLength="200" />
+    <Property Name="previous_surname" Type="varchar" MaxLength="50" />
+    <Property Name="previous_cnic" Type="varchar" MaxLength="50" />
+    <Property Name="previous_mobile" Type="varchar" MaxLength="50" />
+    <Property Name="previous_address" Type="varchar(max)" />
+    <Property Name="new_name" Type="varchar" MaxLength="200" />
+    <Property Name="new_surname" Type="varchar" MaxLength="200" />
+    <Property Name="new_cnic" Type="varchar" MaxLength="50" />
+    <Property Name="new_mobile" Type="varchar" MaxLength="50" />
+    <Property Name="new_address" Type="varchar(max)" />
+    <Property Name="createdby" Type="varchar" MaxLength="50" />
+    <Property Name="createdon" Type="smalldatetime" />
+    <Property Name="description" Type="varchar" MaxLength="500" />
+    <Property Name="approvedby" Type="varchar" MaxLength="50" />
+    <Property Name="status" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="modify_impact">
+    <Key>
+      <PropertyRef Name="impactID" />
+    </Key>
+    <Property Name="impactID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="inword" Type="varchar" MaxLength="15" />
+    <Property Name="modification_status" Type="varchar" MaxLength="250" />
+    <Property Name="consumer_no" Type="varchar" MaxLength="120" />
+    <Property Name="consumer_name" Type="varchar" MaxLength="120" />
+    <Property Name="previous_arrears" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="after_correction" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="difference" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="difference_percentage" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="impact" Type="varchar" MaxLength="15" />
+    <Property Name="Description" Type="varchar(max)" />
+    <Property Name="createdon" Type="smalldatetime" />
+    <Property Name="createdby" Type="varchar" MaxLength="15" />
+    <Property Name="status" Type="tinyint" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'kmc.dbo.modify_invoice' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="modify_invoice">
+    <Key>
+      <PropertyRef Name="sno" />
+    </Key>
+    <Property Name="sno" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="inword" Type="varchar" MaxLength="25" />
+    <Property Name="modification_status" Type="varchar" MaxLength="100" />
+    <Property Name="consumer_no" Type="varchar" MaxLength="120" />
+    <Property Name="previous_category" Type="varchar" MaxLength="120" />
+    <Property Name="previous_area" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="previous_Storey" Type="int" />
+    <Property Name="previous_current_Charges" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="previous_outstanding_Arrears" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="new_category" Type="varchar" MaxLength="120" />
+    <Property Name="new_area" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="new_storey" Type="int" />
+    <Property Name="new_current_Charge" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="new_outstanding_Arrears" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="zone" Type="varchar" MaxLength="50" />
+    <Property Name="town" Type="varchar" MaxLength="50" />
+    <Property Name="billing_month" Type="varchar" MaxLength="120" />
+    <Property Name="consumer_surcharge" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="createdby" Type="varchar" MaxLength="50" />
+    <Property Name="createdon" Type="smalldatetime" />
+    <Property Name="description" Type="varchar" MaxLength="500" />
+    <Property Name="status" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="MUCTBill_Records">
+    <Key>
+      <PropertyRef Name="MUCTBillID" />
+    </Key>
+    <Property Name="MUCTBillID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ConsumerNo" Type="varchar(max)" />
+    <Property Name="Zone" Type="varchar(max)" />
+    <Property Name="Town" Type="varchar(max)" />
+    <Property Name="Employee" Type="varchar(max)" />
+    <Property Name="Createdon" Type="datetime" />
+    <Property Name="createdby" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="muctemployee">
+    <Key>
+      <PropertyRef Name="muctempid" />
+    </Key>
+    <Property Name="muctempid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="employee" Type="varchar" MaxLength="50" />
+    <Property Name="designation" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="partPayment">
+    <Key>
+      <PropertyRef Name="sno" />
+    </Key>
+    <Property Name="sno" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="consumer_no" Type="varchar" MaxLength="20" />
+    <Property Name="consumer_code" Type="varchar" MaxLength="50" />
+    <Property Name="consumer_name" Type="varchar" MaxLength="120" />
+    <Property Name="consumer_address" Type="varchar(max)" />
+    <Property Name="category" Type="varchar" MaxLength="120" />
+    <Property Name="area" Type="int" />
+    <Property Name="issue_date" Type="smalldatetime" />
+    <Property Name="due_date" Type="smalldatetime" />
+    <Property Name="billing_month" Type="varchar" MaxLength="120" />
+    <Property Name="part_payment_into" Type="varchar" MaxLength="4" />
+    <Property Name="current_Charges" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="outstanding_Arrears" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="part_payemnt_arrears" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="createdby" Type="varchar" MaxLength="50" />
+    <Property Name="createdon" Type="smalldatetime" />
+    <Property Name="status" Type="tinyint" />
+    <Property Name="barcode" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="propertytype">
+    <Key>
+      <PropertyRef Name="propertyTypeID" />
+    </Key>
+    <Property Name="propertyTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="propertyTypeName" Type="nvarchar" MaxLength="50" />
+    <Property Name="PropertyCode" Type="varchar" MaxLength="1" />
+    <Property Name="SizeIn" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Rebate_cancle_history">
+    <Key>
+      <PropertyRef Name="RCID" />
+    </Key>
+    <Property Name="RCID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="inwordno" Type="varchar" MaxLength="50" />
+    <Property Name="consumer_no" Type="varchar" MaxLength="50" />
+    <Property Name="consumer_name" Type="varchar" MaxLength="120" />
+    <Property Name="pervious_outstanding" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="after_rebate_outstanding" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="difference" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="difference_percentage" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="cancledby" Type="varchar" MaxLength="50" />
+    <Property Name="cancledon" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="role">
+    <Key>
+      <PropertyRef Name="RoleID" />
+    </Key>
+    <Property Name="RoleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="searchingsheet">
+    <Key>
+      <PropertyRef Name="SearchID" />
+    </Key>
+    <Property Name="SearchID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="inword" Type="int" />
+    <Property Name="consumer_no" Type="varchar(max)" />
+    <Property Name="zone" Type="varchar" MaxLength="100" />
+    <Property Name="Createdby" Type="varchar" MaxLength="50" />
+    <Property Name="createdon" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="searchinsheetsuspended">
+    <Key>
+      <PropertyRef Name="SSID" />
+    </Key>
+    <Property Name="SSID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InwordNo" Type="varchar(max)" />
+    <Property Name="Consumer_No" Type="varchar(max)" />
+    <Property Name="Department" Type="varchar(max)" />
+    <Property Name="Zone" Type="varchar(max)" />
+    <Property Name="Twon" Type="varchar(max)" />
+    <Property Name="Createdon" Type="datetime" />
+    <Property Name="Createdby" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="subcategoryproperty">
+    <Key>
+      <PropertyRef Name="SubCategoryID" />
+    </Key>
+    <Property Name="SubCategoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SubCategoryName" Type="nvarchar" MaxLength="50" />
+    <Property Name="subcategorycode" Type="varchar" MaxLength="1" />
+    <Property Name="PropertyTypeID" Type="int" />
+    <Property Name="Status" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="town">
+    <Key>
+      <PropertyRef Name="TownID" />
+    </Key>
+    <Property Name="TownID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TownName" Type="nvarchar" MaxLength="50" />
+    <Property Name="AccountStatusID" Type="tinyint" />
+    <Property Name="ZoneId" Type="int" />
+  </EntityType>
+  <EntityType Name="userinfo">
+    <Key>
+      <PropertyRef Name="userinfoID" />
+    </Key>
+    <Property Name="userinfoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="nvarchar" MaxLength="50" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="CNIC" Type="nvarchar" MaxLength="25" />
+    <Property Name="Address" Type="nvarchar" MaxLength="100" />
+    <Property Name="RoleID" Type="int" />
+    <Property Name="AccountStatusID" Type="int" />
+  </EntityType>
+  <EntityType Name="users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="varchar" MaxLength="50" />
+    <Property Name="password" Type="varchar" MaxLength="50" />
+    <Property Name="usertypes" Type="varchar" MaxLength="50" />
+    <Property Name="IsActive" Type="bit" />
+  </EntityType>
+  <EntityType Name="zone">
+    <Key>
+      <PropertyRef Name="ZoneID" />
+    </Key>
+    <Property Name="ZoneID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ZoneName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Status" Type="tinyint" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="AdminModelStoreContainer">
+    <EntitySet Name="accountstatus" EntityType="Self.accountstatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="consumer_rebate" EntityType="Self.consumer_rebate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Dapartment_Consumer" EntityType="Self.Dapartment_Consumer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="kmc_emp_rebate" EntityType="Self.kmc_emp_rebate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="modify_consumer" EntityType="Self.modify_consumer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="modify_impact" EntityType="Self.modify_impact" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MUCTBill_Records" EntityType="Self.MUCTBill_Records" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="muctemployee" EntityType="Self.muctemployee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="partPayment" EntityType="Self.partPayment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="propertytype" EntityType="Self.propertytype" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rebate_cancle_history" EntityType="Self.Rebate_cancle_history" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="role" EntityType="Self.role" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="searchingsheet" EntityType="Self.searchingsheet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="searchinsheetsuspended" EntityType="Self.searchinsheetsuspended" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="subcategoryproperty" EntityType="Self.subcategoryproperty" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="town" EntityType="Self.town" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="userinfo" EntityType="Self.userinfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="zone" EntityType="Self.zone" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="invoice" EntityType="Self.invoice" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [invoice].[sno] AS [sno], 
+    [invoice].[consumer_no] AS [consumer_no], 
+    [invoice].[consumer_code] AS [consumer_code], 
+    [invoice].[consumer_name] AS [consumer_name], 
+    [invoice].[consumer_address] AS [consumer_address], 
+    [invoice].[category] AS [category], 
+    [invoice].[area] AS [area], 
+    [invoice].[sqft_sqyd] AS [sqft_sqyd], 
+    [invoice].[Storey] AS [Storey], 
+    [invoice].[zone] AS [zone], 
+    [invoice].[town] AS [town], 
+    [invoice].[uc_no] AS [uc_no], 
+    [invoice].[uc_name] AS [uc_name], 
+    [invoice].[block] AS [block], 
+    [invoice].[issue_date] AS [issue_date], 
+    [invoice].[due_date] AS [due_date], 
+    [invoice].[billing_month] AS [billing_month], 
+    [invoice].[current_Charges] AS [current_Charges], 
+    [invoice].[outstanding_Arrears] AS [outstanding_Arrears], 
+    [invoice].[current_arrears] AS [current_arrears], 
+    [invoice].[consumer_service_charges] AS [consumer_service_charges], 
+    [invoice].[within_duedate_amount] AS [within_duedate_amount], 
+    [invoice].[consumer_surcharge] AS [consumer_surcharge], 
+    [invoice].[after_duedate_amount] AS [after_duedate_amount], 
+    [invoice].[property_tag] AS [property_tag], 
+    [invoice].[kmc_category] AS [kmc_category], 
+    [invoice].[createdby] AS [createdby], 
+    [invoice].[createdon] AS [createdon], 
+    [invoice].[status] AS [status], 
+    [invoice].[consumer_checkdigit] AS [consumer_checkdigit], 
+    [invoice].[billing_period_code] AS [billing_period_code], 
+    [invoice].[barcode] AS [barcode], 
+    [invoice].[checkdigit_status] AS [checkdigit_status], 
+    [invoice].[part_payment_createdon] AS [part_payment_createdon], 
+    [invoice].[part_payment_createdby] AS [part_payment_createdby], 
+    [invoice].[part_payment_arrears] AS [part_payment_arrears], 
+    [invoice].[part_payment_into] AS [part_payment_into], 
+    [invoice].[rebate_status] AS [rebate_status], 
+    [invoice].[short_description] AS [short_description], 
+    [invoice].[Department_Arrears] AS [Department_Arrears], 
+    [invoice].[Arrears_15] AS [Arrears_15]
+    FROM [dbo].[invoice] AS [invoice]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="modify_invoice" EntityType="Self.modify_invoice" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [modify_invoice].[sno] AS [sno], 
+    [modify_invoice].[inword] AS [inword], 
+    [modify_invoice].[modification_status] AS [modification_status], 
+    [modify_invoice].[consumer_no] AS [consumer_no], 
+    [modify_invoice].[previous_category] AS [previous_category], 
+    [modify_invoice].[previous_area] AS [previous_area], 
+    [modify_invoice].[previous_Storey] AS [previous_Storey], 
+    [modify_invoice].[previous_current_Charges] AS [previous_current_Charges], 
+    [modify_invoice].[previous_outstanding_Arrears] AS [previous_outstanding_Arrears], 
+    [modify_invoice].[new_category] AS [new_category], 
+    [modify_invoice].[new_area] AS [new_area], 
+    [modify_invoice].[new_storey] AS [new_storey], 
+    [modify_invoice].[new_current_Charge] AS [new_current_Charge], 
+    [modify_invoice].[new_outstanding_Arrears] AS [new_outstanding_Arrears], 
+    [modify_invoice].[zone] AS [zone], 
+    [modify_invoice].[town] AS [town], 
+    [modify_invoice].[billing_month] AS [billing_month], 
+    [modify_invoice].[consumer_surcharge] AS [consumer_surcharge], 
+    [modify_invoice].[createdby] AS [createdby], 
+    [modify_invoice].[createdon] AS [createdon], 
+    [modify_invoice].[description] AS [description], 
+    [modify_invoice].[status] AS [status]
+    FROM [dbo].[modify_invoice] AS [modify_invoice]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

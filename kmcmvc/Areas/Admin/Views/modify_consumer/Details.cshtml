@@ -1,0 +1,162 @@
+﻿@model kmcmvc.Areas.Admin.Data.modify_consumer
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>modify_consumer</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.inword_no)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.inword_no)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.modification_status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.modification_status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.consumer_no)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.consumer_no)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.previous_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.previous_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.previous_surname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.previous_surname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.previous_cnic)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.previous_cnic)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.previous_mobile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.previous_mobile)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.previous_address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.previous_address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.new_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.new_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.new_surname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.new_surname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.new_cnic)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.new_cnic)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.new_mobile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.new_mobile)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.new_address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.new_address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.createdby)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.createdby)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.createdon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.createdon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.approvedby)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.approvedby)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.status)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.modify_consumerID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

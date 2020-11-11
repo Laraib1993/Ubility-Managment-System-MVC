@@ -1,0 +1,95 @@
+﻿@model kmcmvc.Areas.Admin.Data.userinfo
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="pcoded-inner-content">
+    <!-- Main-body start -->
+    <div class="main-body">
+        <div class="page-wrapper">
+            <!-- Page-body start -->
+            <div class="page-body">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-lg-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5>Details of Selected Users</h5>
+                                <span>
+                                    <p>Use following button <code>according to your needs.</code></p>
+
+                                    <a type="button" class="btn waves-effect waves-dark btn-primary btn-outline-primary btn-icon" href="/Admin/userinfoes/Edit/@Model.userinfoID" data-toggle="tooltip" data-placement="bottom" title="Edit"><i class="icofont icofont-ui-edit"></i></a>
+
+                                    <a type="button" href="/Admin/userinfoes/Index" class="btn waves-effect waves-dark btn-primary btn-outline-success btn-icon" data-toggle="tooltip" data-placement="bottom" title="Back To Users List">
+                                        <i class="icofont icofont-paper-plane"></i>
+                                    </a>
+
+                                </span>
+                            </div>
+                            <div class="card-block">
+                                @*<p>
+                                    While Bootstrap uses <code class="highlighter-rouge">em</code>s or <code class="highlighter-rouge">rem</code>s for defining most sizes, <code class="highlighter-rouge">px</code>s are used for grid
+                                    breakpoints and container widths. This is because the viewport width is in pixels and does not change with the <a href="https://drafts.csswg.org/mediaqueries-3/#units">font size</a>.
+                                </p>
+                                <p>See how aspects of the Bootstrap grid system work across multiple devices with a handy table.</p>*@
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Details Parameters</th>
+                                                <th class="text-center">
+                                                    @Html.DisplayFor(model => model.Username)
+                                                    <br>
+                                                    <small>&lt;Details></small>
+                                                </th>
+                                               
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th class="text-nowrap" scope="row">Username</th>
+                                                <td>@Html.DisplayFor(model => model.Username)</td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-nowrap" scope="row">Full Name</th>
+                                                <td>@Html.DisplayFor(model => model.FullName)</td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-nowrap" scope="row">Password</th>
+                                                <td><code>@Html.DisplayFor(model => model.Password)</code></td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-nowrap" scope="row">Mobile</th>
+                                                <td colspan="5">@Html.DisplayFor(model => model.Mobile)</td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-nowrap" scope="row">Email</th>
+                                                <td colspan="5">@Html.DisplayFor(model => model.Email)</td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-nowrap" scope="row">CNIC</th>
+                                                <td colspan="5">@Html.DisplayFor(model => model.CNIC)</td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-nowrap" scope="row">Address</th>
+                                                <td colspan="5">@Html.DisplayFor(model => model.Address)</td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-nowrap" scope="row">Roles</th>
+                                                <td colspan="5">@Html.DisplayFor(model => model.Rolename)</td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-nowrap" scope="row">Status</th>
+                                                <td colspan="5">@Html.DisplayFor(model => model.status)</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

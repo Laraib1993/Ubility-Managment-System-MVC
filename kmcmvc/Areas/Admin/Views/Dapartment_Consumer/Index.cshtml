@@ -1,0 +1,93 @@
+﻿@model IEnumerable<kmcmvc.Areas.Admin.Data.Dapartment_Consumer>
+
+@{
+    ViewBag.Title = "Dept Consumer";
+}
+
+
+    <div class="pcoded-inner-content">
+        <!-- Main-body start -->
+        <div class="main-body">
+            <div class="page-wrapper">
+                <!-- Page-body start -->
+                <div class="page-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="card">
+                                <div class="card-header table-card-header">
+                                    <h5>KMC's Departments Bill List</h5>
+
+                                </div>
+                                <div class="card-block">
+                                    <span></span>
+                                    <div class="dt-responsive table-responsive">
+                                        <table id="basic-btn" class="table table-striped table-bordered nowrap">
+                                            <thead>
+                                                <tr>
+                                                    <th>Consumer No</th>
+                                                    <th>Status</th>
+                                                    <th>Name</th>
+                                                    <th>Before Part Payment</th>
+                                                    <th>After Part Payment</th>
+                                                    <th>Issued By</th>
+                                                    <th>Issued On</th>
+                                                    <th>Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tbody>
+                                                @foreach (var item in Model)
+                                                {
+
+                                                <tr>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.consumer_no)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.modification_status)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.consumer_name)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.outstanding_Arrears)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.after_rebate)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.createdby)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.createdon)
+                                                    </td>
+                                                    <td>
+                                                        @Html.ActionLink("Details", "Details", new { id = item.sno })
+                                                    </td>
+                                                </tr>
+                                                }
+                                            </tbody>
+                                            <tfoot>
+                                                <tr>
+                                                    <th>Consumer No</th>
+                                                    <th>Status</th>
+                                                    <th>Name</th>
+                                                    <th>Before Part Payment</th>
+                                                    <th>After Part Payment</th>
+                                                    <th>Issued By</th>
+                                                    <th>Issued On</th>
+                                                    <th>Actions</th>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+

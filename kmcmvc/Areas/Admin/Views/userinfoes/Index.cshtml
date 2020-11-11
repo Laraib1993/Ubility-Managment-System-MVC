@@ -1,0 +1,67 @@
+﻿@model IEnumerable<kmcmvc.Areas.Admin.Data.userinfo>
+
+@{
+    ViewBag.Title = "User Info";
+}
+
+<div class="pcoded-inner-content">
+    <!-- Main-body start -->
+    <div class="main-body">
+        <div class="page-wrapper">
+            <!-- Page-body start -->
+            <div class="page-body">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="card">
+                            <div class="card-header table-card-header">
+                                <h5>MUCT KMC User info List</h5>
+                                <input type="hidden" value='@ViewContext.RouteData.Values["userinfoID"]' id="routeDataId" />
+                                
+                            </div>
+                            <div class="card-block">
+                                <span>
+                                    <span class="mytooltip tooltip-effect-3">
+                                        <span class="tooltip-item2">NEW RECORD</span>
+                                        <span class="tooltip-content4 clearfix">
+                                            <span class="tooltip-text3">
+                                                <strong>ADD NEW USERS</strong>, To add new user for <strong>MUCT KMC Application</strong> please click this link.
+                                                <a href="/Admin/userinfoes/Create">CLICK ME</a>
+                                            </span>
+                                        </span>
+                                    </span>
+                                </span>
+                                <div class="dt-responsive table-responsive">
+                                    <table id="userinfotable" class="table table-striped table-bordered nowrap">
+                                        <thead>
+                                            <tr>
+
+                                                <th>User Name</th>
+                                                <th>Full Name</th>
+                                                <th>Role</th>
+                                                <th>Status</th>
+                                                <th>Id</th>
+                                                <th>Action</th>
+
+                                            </tr>
+                                        </thead>
+                                        <tfoot>
+                                            <tr>
+
+                                                <th>User Name</th>
+                                                <th>Full Name</th>
+                                                <th>Role</th>
+                                                <th>Status</th>
+                                                <th>Id</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
